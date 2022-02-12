@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(0,30,166,1) 0%, rgba(0,0,0,1) 100%);
+  overflow: hidden;
+}
+
+ul {
+  position: absolute;
+  left: calc(50% - 6.25px);
+  list-style-type: none;
+  width: 12.5px;
+  height: 70px;
+  border: 1px solid black;
+  background: repeating-linear-gradient(-35deg,#a00,#a00 12px,#fff 10px,#fff 20px); /*https://css-tricks.com/stripes-css*/
+  animation: launchFireworks 2s forwards 0s;
+}
+
+ul::before {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: -6.75px;
+  background-color: transparent;
+  border-left: 12.5px solid transparent;
+  border-right: 12.5px solid transparent;
+  border-top: 12.5px solid transparent;
+  border-bottom: 12.5px solid red;
+}
+
+ul::after {
+  content: '';
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+  background-color: gold;
+}
+
+@keyframes launchFireworks {
+  0% {
+    top: 110%;
+  }
+  100% {
+    top: 40%;
+  }
+}

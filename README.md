@@ -1,1 +1,14 @@
-# CSS-to-the-rescue-eindopdracht.
+# CSS-to-the-rescue-eindopdracht. Procesverslag
+
+## Week 1
+
+Voor dit vak heb ik besloten om de magische vuurwerkshow te gaan maken waarbij ik zelfgemaakte vuurpijlen omhoog wil laten vuren die allemaal op een andere manier ontploffen.
+
+
+Met welke CSS-technieken ga je als eerste aan de slag.
+
+Mijn grootste uitdaging is ongetwijfeld het maken van interacties zonder gebruik te maken van ID's, classes en JavaScript.
+
+Hieronder heb ik een eerste schets gemaakt van mijn nog prille vuurwerkshow en de manier waarop ik mijn HTML wil maken:
+
+![](Documentatie/Week_1/Eerste_schets.jpg)
