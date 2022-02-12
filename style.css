@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+:root {
+  --vuurpijl_breedte: 10px;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -12,41 +16,46 @@ body {
 
 ul {
   position: absolute;
-  left: calc(50% - 6.25px);
+  left: calc(50% - var(--vuurpijl_breedte)/2);
   list-style-type: none;
-  width: 12.5px;
+  width: var(--vuurpijl_breedte);
   height: 70px;
   border: 1px solid black;
-  background: repeating-linear-gradient(-35deg,#a00,#a00 12px,#fff 10px,#fff 20px); /*https://css-tricks.com/stripes-css*/
+  background: repeating-linear-gradient(-35deg,#a00,#a00 10px,#fff 10px,#fff 20px); /* Bron: https://css-tricks.com/stripes-css */
   animation: launchFireworks 2s forwards 0s;
 }
 
-ul::before {
+ul::before { /* Het rode driehoekje boven de vuurpijlen */
   content: '';
   position: absolute;
-  top: -25px;
-  left: -6.75px;
+  top: calc(var(--vuurpijl_breedte)*-2);
+  left: calc(var(--vuurpijl_breedte)*-0.5);
   background-color: transparent;
-  border-left: 12.5px solid transparent;
-  border-right: 12.5px solid transparent;
-  border-top: 12.5px solid transparent;
-  border-bottom: 12.5px solid red;
+  border-left: var(--vuurpijl_breedte) solid transparent;
+  border-right: var(--vuurpijl_breedte) solid transparent;
+  border-top: var(--vuurpijl_breedte) solid transparent;
+  border-bottom: var(--vuurpijl_breedte) solid red;
 }
 
-ul::after {
+ul::after { /* De goudbruine stok onderaan de vuurpijlen */
   content: '';
   position: absolute;
-
-  width: 10px;
-  height: 10px;
-  background-color: gold;
+  width: 2px;
+  height: 50px;
+  background-color: #a38900;
+  top: 100%;
+  right: 2px;
+  border-radius: 0px 0px 5px 5px;
 }
+
 
 @keyframes launchFireworks {
   0% {
-    top: 110%;
+    top: 105%;
+    filter: brightness(1);
   }
   100% {
-    top: 40%;
+    top: 30%;
+    filter: brightness(0.6);
   }
 }
