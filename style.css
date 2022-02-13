@@ -13,7 +13,7 @@ body {
 ul li div {
   width: 2000px;
   height: 2000px;
-  /* border: 1px solid white; */
+  border: 1px solid white;
   border-radius: 50%;
   position: fixed;
   top: -75%;
@@ -24,18 +24,15 @@ ul li div {
 ul li div ul {
   position: absolute;
   top: calc(50% - 35px);
-  left: calc(100% - 5px);
+  left: calc(100% + 5px);
   list-style-type: none;
   width: 10px;
   height: 70px;
   border: 1px solid black;
   background: repeating-linear-gradient(-35deg,#a00,#a00 10px,#fff 10px,#fff 20px); /* Bron: https://css-tricks.com/stripes-css */
-  animation: launchFireworks 2s forwards 0s;
-
 }
 
-ul li div ul::before { /* Het rode driehoekje boven de vuurpijlen */
-  content: '';
+ul li div ul li:nth-child(1) { /* Het rode driehoekje boven de vuurpijlen */
   position: absolute;
   top: -20px;
   left: -5px;
@@ -46,8 +43,40 @@ ul li div ul::before { /* Het rode driehoekje boven de vuurpijlen */
   border-bottom: 10px solid red;
 }
 
-ul li div ul::after { /* De goudbruine stok onderaan de vuurpijlen */
+ul li div ul li:nth-child(2) { /* Het aansteeklontje */
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: #d6d3ab;
+  top: 100%;
+  left: 2px;
+  border-radius: 0px 0px 5px 5px;
+  animation: shrunkFuse 2s forwards 0s;
+}
+
+ul li div ul li:nth-child(2)::before { /* Het aansteeklontje (oranje rand)  */
   content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 95%;
+  left: -150%;
+  clip-path: ellipse(30% 50% at 50% 50%);
+  background-color: #fa0;
+}
+
+ul li div ul li:nth-child(2)::after { /* Het aansteeklontje (gele binnenkant) */
+  content: '';
+  position: absolute;
+  clip-path: ellipse(30% 50% at 50% 50%);
+  background-color: #ff0;
+  width: 6px;
+  height: 6px;
+  top: 100%;
+  left: calc(-150% + 1px);
+}
+
+ul li div ul li:nth-child(3) { /* De goudbruine stok onderaan de vuurpijlen */
   position: absolute;
   width: 2px;
   height: 50px;
@@ -67,12 +96,12 @@ ul li div ul::after { /* De goudbruine stok onderaan de vuurpijlen */
   }
 }
 
-@keyframes launchFireworks {
+@keyframes shrunkFuse {
   0% {
-    filter: brightness(1);
+    height: 20px;
   }
 
   100% {
-    filter: brightness(1);
+    height: 20px;
   }
 }

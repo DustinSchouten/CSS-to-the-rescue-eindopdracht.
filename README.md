@@ -32,3 +32,8 @@ Ook heb ik al nagedacht over de manier waarop de vuurpijlen met een vloeiende cu
 Zie mijn breakdown schets hieronder:
 
 ![](Documentatie/Week_1/Breakdown_schets.png)
+
+Op de vuurvonkjes na (die komen later in dit procesverslag aan bod) heb ik mijn breakdown schets uitgewerkt en dit werkt goed. Om het idee van de vloeiende baan te laten zien heb ik de div een witte border gegeven.
+Zie de screenshot hieronder:
+
+![](Documentatie/Week_1/Screenshot_2.png)
