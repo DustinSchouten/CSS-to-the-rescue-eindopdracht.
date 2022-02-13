@@ -3,10 +3,6 @@
   margin: 0;
 }
 
-:root {
-  --vuurpijl_breedte: 10px;
-}
-
 body {
   width: 100vw;
   height: 100vh;
@@ -14,30 +10,43 @@ body {
   overflow: hidden;
 }
 
-ul {
+ul li div {
+  width: 2000px;
+  height: 2000px;
+  /* border: 1px solid white; */
+  border-radius: 50%;
+  position: fixed;
+  top: -75%;
+  left: -80%;
+  animation: rotateFireworkPath 2s forwards 0s;
+}
+
+ul li div ul {
   position: absolute;
-  left: calc(50% - var(--vuurpijl_breedte)/2);
+  top: calc(50% - 35px);
+  left: calc(100% - 5px);
   list-style-type: none;
-  width: var(--vuurpijl_breedte);
+  width: 10px;
   height: 70px;
   border: 1px solid black;
   background: repeating-linear-gradient(-35deg,#a00,#a00 10px,#fff 10px,#fff 20px); /* Bron: https://css-tricks.com/stripes-css */
   animation: launchFireworks 2s forwards 0s;
+
 }
 
-ul::before { /* Het rode driehoekje boven de vuurpijlen */
+ul li div ul::before { /* Het rode driehoekje boven de vuurpijlen */
   content: '';
   position: absolute;
-  top: calc(var(--vuurpijl_breedte)*-2);
-  left: calc(var(--vuurpijl_breedte)*-0.5);
+  top: -20px;
+  left: -5px;
   background-color: transparent;
-  border-left: var(--vuurpijl_breedte) solid transparent;
-  border-right: var(--vuurpijl_breedte) solid transparent;
-  border-top: var(--vuurpijl_breedte) solid transparent;
-  border-bottom: var(--vuurpijl_breedte) solid red;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid red;
 }
 
-ul::after { /* De goudbruine stok onderaan de vuurpijlen */
+ul li div ul::after { /* De goudbruine stok onderaan de vuurpijlen */
   content: '';
   position: absolute;
   width: 2px;
@@ -48,14 +57,22 @@ ul::after { /* De goudbruine stok onderaan de vuurpijlen */
   border-radius: 0px 0px 5px 5px;
 }
 
+@keyframes rotateFireworkPath {
+  0% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
 @keyframes launchFireworks {
   0% {
-    top: 105%;
     filter: brightness(1);
   }
+
   100% {
-    top: 30%;
-    filter: brightness(0.6);
+    filter: brightness(1);
   }
 }
