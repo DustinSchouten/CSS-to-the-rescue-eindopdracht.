@@ -27,3 +27,8 @@ Daarna ben ik aan de slag gegaan met het bouwen van een enkele vuurpijl die rech
 ![](Documentatie/Week_1/Screenshot_1.png)
 
 Zoals in mijn eerste schets al te zien is, was ik eerst van plan om met de CSS Pseudo Elements ::before en ::after het rode driehoekje en de stok en aansteeklont te maken. Het probleem echter was dat er maar twee pseudo elements waren voor de drie elementen die ik wilde maken. Daarom ben ik van plan om dit d.m.v. een ul met drie li's op te lossen.
+
+Ook heb ik al nagedacht over de manier waarop de vuurpijlen met een vloeiende curve zouden opstijgen, namelijk d.m.v. een onzichtbare cirkel als div die ik zou ronddraaien met transform:rotate. 
+Zie mijn breakdown schets hieronder:
+
+![](Documentatie/Week_1/Breakdown_schets.png)
