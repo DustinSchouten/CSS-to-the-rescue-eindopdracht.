@@ -14,6 +14,8 @@ Bij de vuurwerkshow had ik een aantal ideeën bedacht:
 
 - Een ander idee is dat je een interactie zou kunnen maken waarmee de gebruiker kon bepalen hoeveel vuurpijlen er tegelijk zouden verschijnen.
 
+- Ook had ik bedacht dat je de kleuren van het vuurwerk kon aanpassen.
+
 Deze ideeën werden afgelopen vrijdag dan ook goedgekeurd.
 
 Hieronder heb ik een eerste schets gemaakt van mijn nog prille vuurwerkshow en de manier waarop ik mijn HTML wil maken:
