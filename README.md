@@ -22,9 +22,8 @@ Hieronder heb ik een eerste schets gemaakt van mijn nog prille vuurwerkshow en d
 
 ![](Documentatie/Week_1/Eerste_schets.jpg)
 
-Daarna ben ik aan de slag gegaan met het bouwen van een enkele vuurpijl die recht omhoog zou opstijgen. Zie de screenshot hieronder:
+Daarna ben ik aan de slag gegaan met het bouwen van een enkele vuurpijl die recht omhoog kan opstijgen. Zie de screenshot hieronder:
 
 ![](Documentatie/Week_1/Screenshot_1.png)
 
-text-text-textheb eerst geprobeerd om met before en after te werken
-alleen werkte dat niet omdat ik drie vuurwerkcomponenten had. Daarom met ul en li's opgelost.
+Zoals in mijn eerste schets al te zien is, was ik eerst van plan om met de CSS Pseudo Elements ::before en ::after het rode driehoekje en de stok en aansteeklont te maken. Het probleem echter was dat er maar twee pseudo elements waren voor de drie elementen die ik wilde maken. Daarom ben ik van plan om dit d.m.v. een <ul> met drie <li>'s op te lossen.
