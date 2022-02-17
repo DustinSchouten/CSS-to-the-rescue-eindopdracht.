@@ -2,11 +2,24 @@
   padding: 0;
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  user-select: none;
 }
 
+
+/* Screen width: 1536 */
+/* Screen width: 754 */
 :root {
   --vuurpijlOpstijgenTijd: 2s;
   --vuurvonkjesTijd: 1s;
+
+  --red: red; /* Alle kleuren gespecificeerd: */
+  --orange: orange;
+  --yellow: yellow;
+  --green: #6f6;
+  --blue: #4599ff;
+  --purple: #a73bd9;
+  --pink: #ff0aef;
+  --white: white;
 }
 
 body {
@@ -16,29 +29,101 @@ body {
   overflow: hidden;
 }
 
-
-/* div {
-  display: none;
+section { /* De section voor interacties */
+  position: absolute;
+  z-index: 1;
+  width: 220px;
+  height: 100vh;
+  padding: 20px;
+  background-color: rgba(30,30,30,0.75);
+  color: white;
+  font-size: 1em;
 }
 
-input[type=checkbox] {
+section :is(h2, h3, h4) {
+  margin: 7.5px 0;
+}
+
+section ul {
+  display: grid;
+  list-style: none;
+  width: fit-content;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 1em;
+  margin: 7.5px 0;
+}
+
+input[type=radio] { /* Verplaats de checkboxes buiten het scherm */
   top: -100%;
   position: absolute;
 }
 
-input[type=checkbox] + label {
-  font-size: 2em;
-  color: white;
-}
-input[type=checkbox]:checked + label {
-  background-color: red;
+label {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: block;
+  border-radius: 50%;
+  content: '';
+  font-size: 0;
+  position: relative;
+  border: 5px solid transparent;
 }
 
-p {
-  font-size: 2em;
-  color: white;
-} */
+section ul li:nth-child(1) label {background-color: var(--red);} /* Geef alle klikbare labels de juiste kleur */
+section ul li:nth-child(2) label {background-color: var(--orange);}
+section ul li:nth-child(3) label {background-color: var(--yellow);}
+section ul li:nth-child(4) label {background-color: var(--green);}
+section ul li:nth-child(5) label {background-color: var(--blue);}
+section ul li:nth-child(6) label {background-color: var(--purple);}
+section ul li:nth-child(7) label {background-color: var(--pink);}
+section ul li:nth-child(8) label {background-color: var(--white);}
 
+input[id=color_1_red]:checked ~ section ul:nth-of-type(1) li:nth-child(1) label::before, /* Laat zien op welke labels er geklikt is */
+input[id=color_1_orange]:checked ~ section ul:nth-of-type(1) li:nth-child(2) label::before,
+input[id=color_1_yellow]:checked ~ section ul:nth-of-type(1) li:nth-child(3) label::before,
+input[id=color_1_green]:checked ~ section ul:nth-of-type(1) li:nth-child(4) label::before,
+input[id=color_1_blue]:checked ~ section ul:nth-of-type(1) li:nth-child(5) label::before,
+input[id=color_1_purple]:checked ~ section ul:nth-of-type(1) li:nth-child(6) label::before,
+input[id=color_1_pink]:checked ~ section ul:nth-of-type(1) li:nth-child(7) label::before,
+input[id=color_1_white]:checked ~ section ul:nth-of-type(1) li:nth-child(8) label::before,
+input[id=color_2_red]:checked ~ section ul:nth-of-type(2) li:nth-child(1) label::before,
+input[id=color_2_orange]:checked ~ section ul:nth-of-type(2) li:nth-child(2) label::before,
+input[id=color_2_yellow]:checked ~ section ul:nth-of-type(2) li:nth-child(3) label::before,
+input[id=color_2_green]:checked ~ section ul:nth-of-type(2) li:nth-child(4) label::before,
+input[id=color_2_blue]:checked ~ section ul:nth-of-type(2) li:nth-child(5) label::before,
+input[id=color_2_purple]:checked ~ section ul:nth-of-type(2) li:nth-child(6) label::before,
+input[id=color_2_pink]:checked ~ section ul:nth-of-type(2) li:nth-child(7) label::before,
+input[id=color_2_white]:checked ~ section ul:nth-of-type(2) li:nth-child(8) label::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+input[id=color_1_red]:checked ~ ul li li {--vuurvonkjesKleur1: var(--red);} /* Verander de kleur variabele als er op een label geklikt wordt */
+input[id=color_1_orange]:checked ~ ul li li {--vuurvonkjesKleur1: var(--orange);}
+input[id=color_1_yellow]:checked ~ ul li li {--vuurvonkjesKleur1: var(--yellow);}
+input[id=color_1_green]:checked ~ ul li li {--vuurvonkjesKleur1: var(--green);}
+input[id=color_1_blue]:checked ~ ul li li {--vuurvonkjesKleur1: var(--blue);}
+input[id=color_1_purple]:checked ~ ul li li {--vuurvonkjesKleur1: var(--purple);}
+input[id=color_1_pink]:checked ~ ul li li {--vuurvonkjesKleur1: var(--pink);}
+input[id=color_1_white]:checked ~ ul li li {--vuurvonkjesKleur1: var(--white);}
+input[id=color_2_red]:checked ~ ul li li {--vuurvonkjesKleur2: var(--red);}
+input[id=color_2_orange]:checked ~ ul li li {--vuurvonkjesKleur2: var(--orange);}
+input[id=color_2_yellow]:checked ~ ul li li {--vuurvonkjesKleur2: var(--yellow);}
+input[id=color_2_green]:checked ~ ul li li {--vuurvonkjesKleur2: var(--green);}
+input[id=color_2_blue]:checked ~ ul li li {--vuurvonkjesKleur2: var(--blue);}
+input[id=color_2_purple]:checked ~ ul li li {--vuurvonkjesKleur2: var(--purple);}
+input[id=color_2_pink]:checked ~ ul li li {--vuurvonkjesKleur2: var(--pink);}
+input[id=color_2_white]:checked ~ ul li li {--vuurvonkjesKleur2: var(--white);}
+/*  */
 
 
 
@@ -47,26 +132,35 @@ ul li div { /* Alle ronddraaiende banen */
   height: 2000px;
   border: 1px solid white;
   border-radius: 50%;
-  position: fixed;
-}
-
-ul li:nth-child(1) div {
-  top: -65%;
-  left: -80%;
-  animation: draaiendVuurwerkPadMetKlokMee var(--vuurpijlOpstijgenTijd) forwards 0s;
+  position: absolute;
   animation-timing-function: cubic-bezier(0,.7,.7,1);
 }
 
+ul li:nth-child(1) div {
+  top: -55%;
+  left: -70%;
+  --vuurvonkjesKleur1: white;
+  --vuurvonkjesKleur2: white;
+  --vertragingsTijdPerVuurpijl:0s;
+  animation: draaiendVuurwerkPadMetKlokMee var(--vuurpijlOpstijgenTijd) forwards var(--vertragingsTijdPerVuurpijl);
+}
+
 ul li:nth-child(2) div {
-  top: -75%;
-  left: 80%;
-  animation: draaiendVuurwerkPadTegenKlokIn var(--vuurpijlOpstijgenTijd) forwards 0s;
+  top: -65%;
+  left: 70%;
+  --vuurvonkjesKleur1: white;
+  --vuurvonkjesKleur2: white;
+  --vertragingsTijdPerVuurpijl:3s;
+  animation: draaiendVuurwerkPadTegenKlokIn var(--vuurpijlOpstijgenTijd) forwards var(--vertragingsTijdPerVuurpijl);
 }
 
 ul li:nth-child(3) div {
-  top: -85%;
-  left: 15%;
-  animation: draaiendVuurwerkPadTegenKlokIn var(--vuurpijlOpstijgenTijd) forwards 0s;
+  top: -75%;
+  left: 25%;
+  --vuurvonkjesKleur1: white;
+  --vuurvonkjesKleur2: white;
+  --vertragingsTijdPerVuurpijl:6s;
+  animation: draaiendVuurwerkPadTegenKlokIn var(--vuurpijlOpstijgenTijd) forwards var(--vertragingsTijdPerVuurpijl);
 }
 
 ul li div ul:nth-child(1) { /* De drie elementen van de vuurpijl */
@@ -77,9 +171,9 @@ ul li div ul:nth-child(1) { /* De drie elementen van de vuurpijl */
   width: 10px;
   height: 70px;
   border: 1px solid black;
+  animation: maakVuurpijlenMinderZichtbaar var(--vuurpijlOpstijgenTijd) forwards var(--vertragingsTijdPerVuurpijl);
   background: repeating-linear-gradient(-35deg,#a00,#a00 10px,#fff 10px,#fff 20px); /* Bron: https://css-tricks.com/stripes-css */
 }
-
 
 ul li div ul:nth-child(1) li:nth-child(1) { /* Het rode driehoekje boven de vuurpijlen */
   position: absolute;
@@ -99,7 +193,7 @@ ul li div ul:nth-child(1) li:nth-child(2) { /* Het aansteeklontje */
   top: 100%;
   left: 2px;
   border-radius: 0px 0px 5px 5px;
-  animation: brandendeLont var(--vuurpijlOpstijgenTijd) forwards 0s;
+  animation: brandendeLont var(--vuurpijlOpstijgenTijd) forwards var(--vertragingsTijdPerVuurpijl);
   animation-timing-function: linear;
 }
 
@@ -137,7 +231,7 @@ ul li div ul:nth-child(1) li:nth-child(3) { /* De goudbruine stok onderaan de vu
 
 ul li div ul:nth-child(2) { /* De unordered list met alle vuurvonkjes */
   opacity: 0;
-  animation: showVuurvonkjes var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  animation: showVuurvonkjes var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 
 ul li div ul:nth-child(2) li { /* Alle vuurvonkjes */
@@ -151,81 +245,82 @@ ul li div ul:nth-child(2) li { /* Alle vuurvonkjes */
 }
 
 ul li div ul:nth-child(2) li:nth-child(1) { /* Elk vuurvonkje heeft een andere kleur en gaat een andere richting op */
-  background-color: white;
-  box-shadow: 0px 0px 10px white;
-  animation: animateVuurvonkje1 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur1);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur1);
+  animation: animatieVuurvonkje1 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 ul li div ul:nth-child(2) li:nth-child(2) {
-  background-color: pink;
-  box-shadow: 0px 0px 10px pink;
-  animation: animateVuurvonkje2 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur2);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur2);
+  animation: animatieVuurvonkje2 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 ul li div ul:nth-child(2) li:nth-child(3) {
-  background-color: red;
-  box-shadow: 0px 0px 10px red;
-  animation: animateVuurvonkje3 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur1);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur1);
+  animation: animatieVuurvonkje3 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 ul li div ul:nth-child(2) li:nth-child(4) {
-  background-color: orange;
-  box-shadow: 0px 0px 10px orange;
-  animation: animateVuurvonkje4 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur2);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur2);
+  animation: animatieVuurvonkje4 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 ul li div ul:nth-child(2) li:nth-child(5) {
-  background-color: yellow;
-  box-shadow: 0px 0px 10px yellow;
-  animation: animateVuurvonkje5 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur1);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur1);
+  animation: animatieVuurvonkje5 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 ul li div ul:nth-child(2) li:nth-child(6) {
-  background-color: green;
-  box-shadow: 0px 0px 10px green;
-  animation: animateVuurvonkje6 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur2);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur2);
+  animation: animatieVuurvonkje6 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 ul li div ul:nth-child(2) li:nth-child(7) {
-  background-color: cyan;
-  box-shadow: 0px 0px 10px cyan;
-  animation: animateVuurvonkje7 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur1);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur1);
+  animation: animatieVuurvonkje7 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 ul li div ul:nth-child(2) li:nth-child(8) {
-  background-color: grey;
-  box-shadow: 0px 0px 10px grey;
-  animation: animateVuurvonkje8 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur2);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur2);
+  animation: animatieVuurvonkje8 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 ul li div ul:nth-child(2) li:nth-child(9) {
-  background-color: gold;
-  box-shadow: 0px 0px 10px gold;
-  animation: animateVuurvonkje9 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur1);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur1);
+  animation: animatieVuurvonkje9 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 ul li div ul:nth-child(2) li:nth-child(10) {
-  background-color: blue;
-  box-shadow: 0px 0px 10px blue;
-  animation: animateVuurvonkje10 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur2);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur2);
+  animation: animatieVuurvonkje10 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 ul li div ul:nth-child(2) li:nth-child(11) {
-  background-color: purple;
-  box-shadow: 0px 0px 10px purple;
-  animation: animateVuurvonkje11 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur1);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur1);
+  animation: animatieVuurvonkje11 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 ul li div ul:nth-child(2) li:nth-child(12) {
-  background-color: brown;
-  box-shadow: 0px 0px 10px brown;
-  animation: animateVuurvonkje12 var(--vuurvonkjesTijd) forwards var(--vuurpijlOpstijgenTijd);
+  background-color: var(--vuurvonkjesKleur2);
+  box-shadow: 0px 0px 10px var(--vuurvonkjesKleur2);
+  animation: animatieVuurvonkje12 var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
-@keyframes draaiendVuurwerkPadMetKlokMee {0% {transform: rotate(20deg);} 100% {transform: rotate(-5deg);}}
-@keyframes draaiendVuurwerkPadTegenKlokIn {0% {transform: scaleX(-1) rotate(20deg);} 100% {transform: scaleX(-1) rotate(-5deg);}}
+@keyframes draaiendVuurwerkPadMetKlokMee {0% {transform: rotate(25deg);} 100% {transform: rotate(-5deg);}}
+@keyframes draaiendVuurwerkPadTegenKlokIn {0% {transform: scaleX(-1) rotate(25deg);} 100% {transform: scaleX(-1) rotate(-5deg);}}
+@keyframes maakVuurpijlenMinderZichtbaar {0% {opacity: 1;} 25% {opacity: 1;} 99% {opacity: 0.2;} 100% {opacity: 0;}}
 
 @keyframes brandendeLont {0% {Height: 30px;} 100% {height: 0px;}}
 
 @keyframes showVuurvonkjes {0% {opacity: 0;} 1% {opacity: 1;} 50% {opacity: 0.8;} 100% {opacity: 0;}}
 
-@keyframes animateVuurvonkje1  {0% {transform: rotate(90deg);}  100% {transform: translate(0px,-200px)      rotate(90deg);}}
-@keyframes animateVuurvonkje2  {0% {transform: rotate(-60deg);} 100% {transform: translate(100px,-173.2px)  rotate(-60deg);}}
-@keyframes animateVuurvonkje3  {0% {transform: rotate(-30deg);} 100% {transform: translate(173.2px,-100px)  rotate(-30deg);}}
-@keyframes animateVuurvonkje4  {0% {transform: rotate(0deg);}   100% {transform: translate(200px,0px);}}
-@keyframes animateVuurvonkje5  {0% {transform: rotate(30deg);}  100% {transform: translate(173.2px,100px)   rotate(30deg);}}
-@keyframes animateVuurvonkje6  {0% {transform: rotate(60deg);}  100% {transform: translate(100px,173.2px)   rotate(60deg);}}
-@keyframes animateVuurvonkje7  {0% {transform: rotate(90deg);}  100% {transform: translate(0px,200px)       rotate(90deg);}}
-@keyframes animateVuurvonkje8  {0% {transform: rotate(-60deg);} 100% {transform: translate(-100px,173.2px)  rotate(-60deg);}}
-@keyframes animateVuurvonkje9  {0% {transform: rotate(-30deg);} 100% {transform: translate(-173.2px,100px)  rotate(-30deg);}}
-@keyframes animateVuurvonkje10 {0% {transform: rotate(0deg);}   100% {transform: translate(-200px,0px);}}
-@keyframes animateVuurvonkje11 {0% {transform: rotate(30deg);}  100% {transform: translate(-173.2px,-100px) rotate(30deg);}}
-@keyframes animateVuurvonkje12 {0% {transform: rotate(60deg);}  100% {transform: translate(-100px,-173.2px) rotate(60deg);}}
+@keyframes animatieVuurvonkje1  {0% {width: 40px; transform: rotate(90deg);}  100% {width: 8px; transform: translate(0px,-150px)      rotate(90deg);}}
+@keyframes animatieVuurvonkje2  {0% {width: 40px; transform: rotate(-60deg);} 100% {width: 8px; transform: translate(75px,-130px)  rotate(-60deg);}}
+@keyframes animatieVuurvonkje3  {0% {width: 40px; transform: rotate(-30deg);} 100% {width: 8px; transform: translate(130px,-75px)  rotate(-30deg);}}
+@keyframes animatieVuurvonkje4  {0% {width: 40px; transform: rotate(0deg);}   100% {width: 8px; transform: translate(150px,0px);}}
+@keyframes animatieVuurvonkje5  {0% {width: 40px; transform: rotate(30deg);}  100% {width: 8px; transform: translate(130px,75px)   rotate(30deg);}}
+@keyframes animatieVuurvonkje6  {0% {width: 40px; transform: rotate(60deg);}  100% {width: 8px; transform: translate(75px,130px)   rotate(60deg);}}
+@keyframes animatieVuurvonkje7  {0% {width: 40px; transform: rotate(90deg);}  100% {width: 8px; transform: translate(0px,150px)       rotate(90deg);}}
+@keyframes animatieVuurvonkje8  {0% {width: 40px; transform: rotate(-60deg);} 100% {width: 8px; transform: translate(-75px,130px)  rotate(-60deg);}}
+@keyframes animatieVuurvonkje9  {0% {width: 40px; transform: rotate(-30deg);} 100% {width: 8px; transform: translate(-130px,75px)  rotate(-30deg);}}
+@keyframes animatieVuurvonkje10 {0% {width: 40px; transform: rotate(0deg);}   100% {width: 8px; transform: translate(-150px,0px);}}
+@keyframes animatieVuurvonkje11 {0% {width: 40px; transform: rotate(30deg);}  100% {width: 8px; transform: translate(-130px,-75px) rotate(30deg);}}
+@keyframes animatieVuurvonkje12 {0% {width: 40px; transform: rotate(60deg);}  100% {width: 8px; transform: translate(-75px,-130px) rotate(60deg);}}

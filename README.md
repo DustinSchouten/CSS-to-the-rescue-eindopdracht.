@@ -39,3 +39,28 @@ Zie de screenshot hieronder:
 ![](Documentatie/Week_1/Screenshot_2.png)
 
 ## Week 2
+In deze week heb ik me beziggehouden met het helemaal afmaken van mijn vuurpijl. Dat heb ik uitgewerkt volgens mijn breakdown-schets. Het rode driehoekje, het aansteeklontje en de vuurwerkstok.
+
+
+de vuurvonkjes. Zoals ik in mijn breakdown-schets eerder heb laten zien, heb ik de vuurvonkjes als list-items in een unordered list gegroepeerd. 
+
+![](Documentatie/Week_2/Screenshot_1.png)
+
+
+Laat je voortgang zien ('praatje met plaatjes').
+
+Wat ging er soepel en wat was lastig.
+
+Welke experimenten heb je gedaan die die 'mislukt' zijn.
+
+Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
+
+-ja: custom properties toepassen (zowel root als per element) gebruikt voor werken met delays bij animaties
+-misschien: random variabelen
+-ja labels en checkboxes voor interactie
+
+Neem wijzigingen aan je 1e plan op.
+
+Waar liggen je (nieuwe) uitdagingen voor komende week.
+- elk vuurvonkje als list met nieuwe vuurvonkjes laten ontploffen
+- checkboxes voor interactie maken
