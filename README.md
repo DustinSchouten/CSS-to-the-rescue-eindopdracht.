@@ -52,19 +52,14 @@ Zie de screenshot hieronder:
 
 ![](Documentatie/Week_2/Screenshot_2.png)
 
-Wat ging er soepel en wat was lastig.
+Het meest lastige vond ik het maken van het control panel (zie de screenshots). Doordat de vuurwerkbanen als het ware over het control panel heen bewogen, kon ik niet op het panel klikken. Dit heb ik uiteindelijk opgelost door deze een z-index:1 mee te geven. Ook vond ik het lastig om te begrijpen hoe checkboxes, radiobuttons en labels werken en hoe je deze kon toepassen. Voor de rest is alles eigenlijk best soepel verlopen.
 
 Tot nu toe heb ik nog geen nieuwe experimenten gedaan die 'mislukt' zijn. Wel heb ik een hoop nieuwe CSS-technieken geleerd met dit project:
 - Ik heb geleerd dat je custom properties ook kan aanpassen door de CSS-regels heen, ipv het enkel definieren bij de :root.
 - Ik heb geleerd hoe je de ~ en de + selector kunt toepassen. Ook heb ik de pseudo-class :is voor het eerst gebruikt.
 - Wat ik ook niet wist, was dat je labels en radio buttons op een dusdanige manier kon gebruiken dat je hiermee een interactie kan creëeren waardoor je geen JavaScript hoeft te gebruiken.
 
-
--misschien: random variabelen
-
-Neem wijzigingen aan je 1e plan op.
-
-
 Waar liggen je (nieuwe) uitdagingen voor komende week.
-- elk vuurvonkje als list met nieuwe vuurvonkjes laten ontploffen
-- het geheel zoveel mogelijk responsive maken. Hierbij ga ik de property viewport min proberen toe te passen.
+- Bij alle keyframes die ik tot nu toe heb gebruikt, heb ik de animation-fill-mode op forwards gezet. Hierdoor zie je de vuurpijlen slechts één keer opstijgen en ontploffen, totdat je de pagina opnieuw refresht. Dit probleem zal ik in de komende week proberen te gaan verhelpen.
+- Ook merk ik dat ik tegen een aantal responsive issues aanloop doordat ik gebruikmaak van de ronddraaiende banen. Ook dit probleem ga ik proberen op te lossen door te experimenteren met de property viewport min.
+- Verder leek het me een leuk idee om voor alle vuurpijlen elk vuurvonkje apart te nemen en deze opnieuw in 'sub' vuurvonkjes te laten ontploffen. Dit zal ik proberen door elk vuurvonkje, nu nog een list-item, opnieuw als unordered-list met list-items te definieren.

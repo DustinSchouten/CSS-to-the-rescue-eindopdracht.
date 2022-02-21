@@ -163,7 +163,7 @@ ul li:nth-child(3) div {
   animation: draaiendVuurwerkPadTegenKlokIn var(--vuurpijlOpstijgenTijd) forwards var(--vertragingsTijdPerVuurpijl);
 }
 
-ul li div ul:nth-child(1) { /* De drie elementen van de vuurpijl */
+ul li div ul:nth-child(1) { /* De vuurpijlen */
   position: absolute;
   top: calc(50% - 35px);
   left: calc(100% + 5px);
