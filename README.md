@@ -42,27 +42,29 @@ Zie de screenshot hieronder:
 
 ## Week 2
 In deze week heb ik me beziggehouden met het helemaal afmaken van mijn vuurpijl. Dat heb ik uitgewerkt volgens mijn breakdown-schets. Het rode driehoekje, het aansteeklontje en de vuurwerkstok.
-
-
-de vuurvonkjes. Zoals ik in mijn breakdown-schets eerder heb laten zien, heb ik de vuurvonkjes als list-items in een unordered list gegroepeerd. 
+Zie de screenshot hieronder:
 
 ![](Documentatie/Week_2/Screenshot_1.png)
 
+Ook heb ik me beziggehouden met het maken van de vuurvonkjes. Zoals ik in mijn breakdown-schets eerder heb laten zien, heb ik de vuurvonkjes als list-items in een unordered list gegroepeerd.
+Het coderen van vuurvonkjes is erg goed gegaan. Ik heb alle vuurvonkjes een aparte keyframe meegegeven waardoor ze allemaal een andere kant opvliegen. Ook heb ik ervoor gezorgd dat je doormiddel van custom properties de kleuren kan aanpassen.
+Zie de screenshot hieronder:
 
-Laat je voortgang zien ('praatje met plaatjes').
+![](Documentatie/Week_2/Screenshot_2.png)
 
 Wat ging er soepel en wat was lastig.
 
-Welke experimenten heb je gedaan die die 'mislukt' zijn.
+Tot nu toe heb ik nog geen nieuwe experimenten gedaan die 'mislukt' zijn. Wel heb ik een hoop nieuwe CSS-technieken geleerd met dit project:
+- Ik heb geleerd dat je custom properties ook kan aanpassen door de CSS-regels heen, ipv het enkel definieren bij de :root.
+- Ik heb geleerd hoe je de ~ en de + selector kunt toepassen. Ook heb ik de pseudo-class :is voor het eerst gebruikt.
+- Wat ik ook niet wist, was dat je labels en radio buttons op een dusdanige manier kon gebruiken dat je hiermee een interactie kan creëeren waardoor je geen JavaScript hoeft te gebruiken.
 
-Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
 
--ja: custom properties toepassen (zowel root als per element) gebruikt voor werken met delays bij animaties
 -misschien: random variabelen
--ja labels en checkboxes voor interactie
 
 Neem wijzigingen aan je 1e plan op.
 
+
 Waar liggen je (nieuwe) uitdagingen voor komende week.
 - elk vuurvonkje als list met nieuwe vuurvonkjes laten ontploffen
-- checkboxes voor interactie maken
+- het geheel zoveel mogelijk responsive maken. Hierbij ga ik de property viewport min proberen toe te passen.

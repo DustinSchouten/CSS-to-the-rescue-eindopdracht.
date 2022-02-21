@@ -79,7 +79,7 @@ section ul li:nth-child(6) label {background-color: var(--purple);}
 section ul li:nth-child(7) label {background-color: var(--pink);}
 section ul li:nth-child(8) label {background-color: var(--white);}
 
-input[id=color_1_red]:checked ~ section ul:nth-of-type(1) li:nth-child(1) label::before, /* Laat zien op welke labels er geklikt is */
+input[id=color_1_red]:checked ~ section ul:nth-of-type(1) li:nth-child(1) label::before, /* Laat met het witte rondje met zwarte rand zien welke labels er geselecteerd zijn */
 input[id=color_1_orange]:checked ~ section ul:nth-of-type(1) li:nth-child(2) label::before,
 input[id=color_1_yellow]:checked ~ section ul:nth-of-type(1) li:nth-child(3) label::before,
 input[id=color_1_green]:checked ~ section ul:nth-of-type(1) li:nth-child(4) label::before,
@@ -234,7 +234,7 @@ ul li div ul:nth-child(2) { /* De unordered list met alle vuurvonkjes */
   animation: showVuurvonkjes var(--vuurvonkjesTijd) forwards calc(var(--vuurpijlOpstijgenTijd) + var(--vertragingsTijdPerVuurpijl));
 }
 
-ul li div ul:nth-child(2) li { /* Alle vuurvonkjes */
+ul li div ul:nth-child(2) li { /* Alle vuurvonkjes (de gezamenlijke properties) */
   position: absolute;
   top: calc(50% - 35px);
   left: calc(100% - 10px);
@@ -312,15 +312,15 @@ ul li div ul:nth-child(2) li:nth-child(12) {
 
 @keyframes showVuurvonkjes {0% {opacity: 0;} 1% {opacity: 1;} 50% {opacity: 0.8;} 100% {opacity: 0;}}
 
-@keyframes animatieVuurvonkje1  {0% {width: 40px; transform: rotate(90deg);}  100% {width: 8px; transform: translate(0px,-150px)      rotate(90deg);}}
+@keyframes animatieVuurvonkje1  {0% {width: 40px; transform: rotate(90deg);}  100% {width: 8px; transform: translate(0px,-150px)   rotate(90deg);}}
 @keyframes animatieVuurvonkje2  {0% {width: 40px; transform: rotate(-60deg);} 100% {width: 8px; transform: translate(75px,-130px)  rotate(-60deg);}}
 @keyframes animatieVuurvonkje3  {0% {width: 40px; transform: rotate(-30deg);} 100% {width: 8px; transform: translate(130px,-75px)  rotate(-30deg);}}
-@keyframes animatieVuurvonkje4  {0% {width: 40px; transform: rotate(0deg);}   100% {width: 8px; transform: translate(150px,0px);}}
+@keyframes animatieVuurvonkje4  {0% {width: 40px;}                            100% {width: 8px; transform: translate(150px,0px)}}
 @keyframes animatieVuurvonkje5  {0% {width: 40px; transform: rotate(30deg);}  100% {width: 8px; transform: translate(130px,75px)   rotate(30deg);}}
 @keyframes animatieVuurvonkje6  {0% {width: 40px; transform: rotate(60deg);}  100% {width: 8px; transform: translate(75px,130px)   rotate(60deg);}}
-@keyframes animatieVuurvonkje7  {0% {width: 40px; transform: rotate(90deg);}  100% {width: 8px; transform: translate(0px,150px)       rotate(90deg);}}
+@keyframes animatieVuurvonkje7  {0% {width: 40px; transform: rotate(90deg);}  100% {width: 8px; transform: translate(0px,150px)    rotate(90deg);}}
 @keyframes animatieVuurvonkje8  {0% {width: 40px; transform: rotate(-60deg);} 100% {width: 8px; transform: translate(-75px,130px)  rotate(-60deg);}}
 @keyframes animatieVuurvonkje9  {0% {width: 40px; transform: rotate(-30deg);} 100% {width: 8px; transform: translate(-130px,75px)  rotate(-30deg);}}
-@keyframes animatieVuurvonkje10 {0% {width: 40px; transform: rotate(0deg);}   100% {width: 8px; transform: translate(-150px,0px);}}
+@keyframes animatieVuurvonkje10 {0% {width: 40px;}                            100% {width: 8px; transform: translate(-150px,0px)}}
 @keyframes animatieVuurvonkje11 {0% {width: 40px; transform: rotate(30deg);}  100% {width: 8px; transform: translate(-130px,-75px) rotate(30deg);}}
 @keyframes animatieVuurvonkje12 {0% {width: 40px; transform: rotate(60deg);}  100% {width: 8px; transform: translate(-75px,-130px) rotate(60deg);}}
