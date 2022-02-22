@@ -61,5 +61,8 @@ Tot nu toe heb ik nog geen nieuwe experimenten gedaan die 'mislukt' zijn. Wel he
 
 Waar liggen je (nieuwe) uitdagingen voor komende week.
 - Bij alle keyframes die ik tot nu toe heb gebruikt, heb ik de animation-fill-mode op forwards gezet. Hierdoor zie je de vuurpijlen slechts één keer opstijgen en ontploffen, totdat je de pagina opnieuw refresht. Dit probleem zal ik in de komende week proberen te gaan verhelpen.
-- Ook merk ik dat ik tegen een aantal responsive issues aanloop doordat ik gebruikmaak van de ronddraaiende banen. Ook dit probleem ga ik proberen op te lossen door te experimenteren met de property viewport min.
+- Ook merk ik dat ik tegen een aantal responsive issues aanloop doordat ik gebruikmaak van de ronddraaiende banen. Ook dit probleem ga ik proberen op te lossen door te experimenteren met de property viewport min. Met de screenshot hieronder wordt dit probleem nogmaals duidelijk:
+
+![](Documentatie/Week_2/Screenshot_3.png)
+
 - Verder leek het me een leuk idee om voor alle vuurpijlen elk vuurvonkje apart te nemen en deze opnieuw in 'sub' vuurvonkjes te laten ontploffen. Dit zal ik proberen door elk vuurvonkje, nu nog een list-item, opnieuw als unordered-list met list-items te definieren.
