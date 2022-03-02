@@ -59,8 +59,8 @@ Tot nu toe heb ik nog geen nieuwe experimenten gedaan die 'mislukt' zijn. Wel he
 - Ik heb geleerd hoe je de ~ en de + selector kunt toepassen. Ook heb ik de pseudo-class :is voor het eerst gebruikt.
 - Wat ik ook niet wist, was dat je labels en radio buttons op een dusdanige manier kon gebruiken dat je hiermee een interactie kan creëeren waardoor je geen JavaScript hoeft te gebruiken.
 
-Waar liggen je (nieuwe) uitdagingen voor komende week.
-- Bij alle keyframes die ik tot nu toe heb gebruikt, heb ik geen iteration-count gedefinieerd. Hierdoor zie je de vuurpijlen slechts één keer opstijgen en ontploffen, totdat je de pagina opnieuw refresht. Doordat de vuurpijl uit meerdere animaties bestaat, kun je niet zomaar de iteration-count op infinite zetten. Dit probleem ga ik proberen op te lossen.
+Mijn nieuwe uitdagingen voor komende week:
+- Bij alle keyframes die ik tot nu toe heb gebruikt, heb ik geen iteration-count gedefinieerd. Hierdoor zie je de vuurpijlen slechts één keer opstijgen en ontploffen, totdat je de pagina opnieuw refresht. Doordat de vuurpijl uit meerdere animaties bestaat, kun je niet zomaar bij iedere animatie afzonderlijk de iteration-count op infinite zetten. Dit probleem ga ik proberen op te lossen.
 - Ook merk ik dat ik tegen een aantal responsive issues aanloop doordat ik gebruikmaak van de ronddraaiende banen. Ook dit probleem ga ik proberen op te lossen door te experimenteren met de property viewport min. Met de screenshot hieronder wordt dit probleem nogmaals duidelijk:
 
 ![](Documentatie/Week_2/Screenshot_3.png)
@@ -72,7 +72,7 @@ Waar liggen je (nieuwe) uitdagingen voor komende week.
 In deze week (en in de voorjaarsvakantie) heb ik me beziggehouden met een aantal zaken:
 
 ### Het volledig responsive maken van de ronddraaiende banen van de vuurpijlen
-Dit vond ik erg lastig om voor elkaar te krijgen, en al helemaal als je je scherm draait (waardoor de hoogte van het scherm groter wordt dan de breedte). Uiteindelijk heb ik dit opgelost door zowel de width en de height van deze cirkels (divs) op max(100vw,150vh) te zetten. Zie de screenshot hieronder:
+Dit vond ik erg lastig om voor elkaar te krijgen, en al helemaal als je je scherm draait (waardoor de hoogte van het scherm groter wordt dan de breedte). Uiteindelijk heb ik dit opgelost door zowel de width en de height van deze cirkels (divs) op max(100vw,150vh) te zetten. Dit gebruik van view-port min en max was voor mij nieuw. Zie de screenshot hieronder:
 
 ![](Documentatie/Week_3/Screenshot_1.png)
 
@@ -87,6 +87,8 @@ De animatie die ik voorheen had gemaakt telde 12 vuurvonkjes voor iedere vuurpij
 
 ![](Documentatie/Week_3/Screenshot_4.png)
 
+Hierna heb ik voor beide vuurvonkjes een nieuwe unordered-list met list-items gemaakt en elk nieuw vuurvonkje dezelfde animatie meegegeven.
+
 ### De vuurpijlanimatie oneindig door laten afspelen, om zo een 'show' te creëeren
 Ook dit was vrij lastig omdat de vuurpijlen uit verschillende animaties bestaan, namelijk het opstijgen van de vuurpijl en het laten zien van de vuurvonkjes. Deze animaties moeten ook achter elkaar worden afgespeeld. Ik wist dat je animaties een delay van een bepaalde tijd kon meegeven, maar het probleem hierbij was dat delay's alleen na de allereerste iteratie werken en dat de animatie daarna zonder delays worden afgespeeld.
 Om dit probleem op te lossen heb ik uiteindelijk de animaties als volgt opgesteld (ik heb niet letterlijk deze namen gebruikt):
@@ -98,20 +100,13 @@ Om dit probleem op te lossen heb ik uiteindelijk de animaties als volgt opgestel
 Op deze manier worden alle animaties in 1/3 van de tijd afgespeeld. De totale tijdsduur van alle animaties is de opsomming van alledrie de animaties apart.
 
 ### Het toevoegen van bomen.
-Hiervoor heb ik gebruikgemaakt van CSS randomness door hierbij gebruik te maken van priemgetallen. Hiermee heb ik random patronen gecreëerd in de kleur, de hoogte en de positie van de boomstronken en in de kleur van de bladeren. Dit was voor mij een nieuwe manier om de kracht van CSS te gebruiken, zonder hierbij JavaScript te hoeven toepassen. Dit principe implementeren verliep voor mij redelijk soepel.
+Hiervoor heb ik gebruikgemaakt van CSS randomness door hierbij gebruik te maken van priemgetallen. Hiermee heb ik random patronen gecreëerd in de kleur, de hoogte en de positie van de boomstronken en in de kleur van de bladeren. Dit was voor mij een nieuwe manier om de kracht van CSS te gebruiken, zonder hierbij JavaScript te hoeven toepassen. Dit principe implementeren verliep voor mij redelijk soepel. De boombladeren heb ik overigens gemaakt met CSS-clip-paths. Ook dat was voor mij nieuw.
 
+Al met al, kan ik vermelden dat er nog geen experimenten met CSS mislukt zijn.
 
+Mijn nieuwe uitdagingen voor komende week:
+- Aankomende week ga ik proberen om het reduce-motion principe toe te passen. Ik proberen om met dit principe te werken en een soort catalogus op te zetten met afbeeldingen van de animaties.
+- 
 
+Verder ga ik om de show af te maken wat meer interacties aan het control panel toevoegen.
 
-- Wat ging er soepel en wat was lastig.
-css selector selecteerde vaak het verkeerde element, daarvoor uiteindelijk > selector gebruikt
-
-
-
-- Welke experimenten heb je gedaan die 'mislukt' zijn.
-- Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
-
-random patterns d.m.v. priemgetallen
-
-- Neem wijzigingen aan je 1e plan op.
-- Waar liggen je (nieuwe) uitdagingen voor komende week.
