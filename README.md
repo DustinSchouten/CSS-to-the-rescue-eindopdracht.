@@ -60,9 +60,58 @@ Tot nu toe heb ik nog geen nieuwe experimenten gedaan die 'mislukt' zijn. Wel he
 - Wat ik ook niet wist, was dat je labels en radio buttons op een dusdanige manier kon gebruiken dat je hiermee een interactie kan creëeren waardoor je geen JavaScript hoeft te gebruiken.
 
 Waar liggen je (nieuwe) uitdagingen voor komende week.
-- Bij alle keyframes die ik tot nu toe heb gebruikt, heb ik de animation-fill-mode op forwards gezet. Hierdoor zie je de vuurpijlen slechts één keer opstijgen en ontploffen, totdat je de pagina opnieuw refresht. Dit probleem zal ik in de komende week proberen te gaan verhelpen.
+- Bij alle keyframes die ik tot nu toe heb gebruikt, heb ik geen iteration-count gedefinieerd. Hierdoor zie je de vuurpijlen slechts één keer opstijgen en ontploffen, totdat je de pagina opnieuw refresht. Doordat de vuurpijl uit meerdere animaties bestaat, kun je niet zomaar de iteration-count op infinite zetten. Dit probleem ga ik proberen op te lossen.
 - Ook merk ik dat ik tegen een aantal responsive issues aanloop doordat ik gebruikmaak van de ronddraaiende banen. Ook dit probleem ga ik proberen op te lossen door te experimenteren met de property viewport min. Met de screenshot hieronder wordt dit probleem nogmaals duidelijk:
 
 ![](Documentatie/Week_2/Screenshot_3.png)
 
 - Verder leek het me een leuk idee om voor alle vuurpijlen elk vuurvonkje apart te nemen en deze opnieuw in 'sub' vuurvonkjes te laten ontploffen. Dit zal ik proberen door elk vuurvonkje, nu nog een list-item, opnieuw als unordered-list met list-items te definieren.
+
+## Voorjaarsvakantie + Week 3
+- Laat je voortgang zien ('praatje met plaatjes').
+In deze week (en in de voorjaarsvakantie) heb ik me beziggehouden met een aantal zaken:
+
+### Het volledig responsive maken van de ronddraaiende banen van de vuurpijlen
+Dit vond ik erg lastig om voor elkaar te krijgen, en al helemaal als je je scherm draait (waardoor de hoogte van het scherm groter wordt dan de breedte). Uiteindelijk heb ik dit opgelost door zowel de width en de height van deze cirkels (divs) op max(100vw,150vh) te zetten. Zie de screenshot hieronder:
+
+![](Documentatie/Week_3/Screenshot_1.png)
+
+Met in- en uitklapbaar control panel:
+![](Documentatie/Week_3/Screenshot_2.png)
+
+Zo ziet het eruit op een kleiner (gedraaid) scherm:
+![](Documentatie/Week_3/Screenshot_3.png)
+
+### Het toevoegen van sub-vuurvonkjes
+De animatie die ik voorheen had gemaakt telde 12 vuurvonkjes voor iedere vuurpijl. Dit waren, zoals eerder vermeld, allemaal list-items in een unordered-list. Twee vuurvonkjes heb ik wat dikker gemaakt en met een hogere opacity wat langer laten 'branden'. Zie de screenshot hieronder: 
+
+![](Documentatie/Week_3/Screenshot_4.png)
+
+### De vuurpijlanimatie oneindig door laten afspelen, om zo een 'show' te creëeren
+Ook dit was vrij lastig omdat de vuurpijlen uit verschillende animaties bestaan, namelijk het opstijgen van de vuurpijl en het laten zien van de vuurvonkjes. Deze animaties moeten ook achter elkaar worden afgespeeld. Ik wist dat je animaties een delay van een bepaalde tijd kon meegeven, maar het probleem hierbij was dat delay's alleen na de allereerste iteratie werken en dat de animatie daarna zonder delays worden afgespeeld.
+Om dit probleem op te lossen heb ik uiteindelijk de animaties als volgt opgesteld (ik heb niet letterlijk deze namen gebruikt):
+
+- vuurpijl_opstijgen: 0% {beginpunt van de animatie} 33%,100% {eindpunt van de animatie}
+- eerste_generatie_vuurvonkjes_animeren: 0%,32% {zet de opacity op 0} 33% {beginpunt van de animatie} 66%,100% {eindpunt van de animatie}
+- tweede_generatie_vuurvonkjes_animeren: 0%,65% {zet de opacity op 0} 66% {beginpunt van de animatie} 100% {eindpunt van de animatie}
+
+Op deze manier worden alle animaties in 1/3 van de tijd afgespeeld. De totale tijdsduur van alle animaties is de opsomming van alledrie de animaties apart.
+
+### Het toevoegen van bomen.
+Hiervoor heb ik gebruikgemaakt van CSS randomness door hierbij gebruik te maken van priemgetallen. Hiermee heb ik random patronen gecreëerd in de kleur, de hoogte en de positie van de boomstronken en in de kleur van de bladeren. Dit was voor mij een nieuwe manier om de kracht van CSS te gebruiken, zonder hierbij JavaScript te hoeven toepassen. Dit principe implementeren verliep voor mij redelijk soepel.
+
+
+
+
+- Wat ging er soepel en wat was lastig.
+css selector selecteerde vaak het verkeerde element, daarvoor uiteindelijk > selector gebruikt
+
+
+
+- Welke experimenten heb je gedaan die 'mislukt' zijn.
+- Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
+
+random patterns d.m.v. priemgetallen
+
+- Neem wijzigingen aan je 1e plan op.
+- Waar liggen je (nieuwe) uitdagingen voor komende week.

@@ -224,34 +224,32 @@ section:nth-of-type(2) ul li:nth-last-of-type(11n+1)::before {background-color: 
 ul li div { /* Alle ronddraaiende banen */
   width: max(100vw,150vh);
   height: max(100vw,150vh);
+  bottom: min(-35vw,-25vh);
   border-radius: 50%;
+  border: 1px solid white;
   position: absolute;
   animation-timing-function: cubic-bezier(0,.7,.7,1);
 }
 
 ul li:nth-of-type(1) div { /* De eerste ronddraaiende baan met vuurpijl */
-  bottom: min(-35vw,-25vh);
   right: 50%;
   --vertragingsTijd: 0s;
   animation: draaiendVuurwerkPadTegenKlokIn var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
 }
 
 ul li:nth-of-type(2) div {
-  bottom: min(-35vw,-25vh);
   left: 70%;
   --vertragingsTijd: var(--vertragingsTijdPerVuurpijl);
   animation: draaiendVuurwerkPadMetKlokMee var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
 }
 
 ul li:nth-of-type(3) div {
-  bottom: min(-35vw,-25vh);
   left: 50%;
   --vertragingsTijd: calc(var(--vertragingsTijdPerVuurpijl) * 2);
   animation: draaiendVuurwerkPadMetKlokMee var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
 }
 
 ul li:nth-of-type(4) div {
-  bottom: min(-35vw,-25vh);
   right: 70%;
   --vertragingsTijd: calc(var(--vertragingsTijdPerVuurpijl) * 3);
   animation: draaiendVuurwerkPadTegenKlokIn var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
