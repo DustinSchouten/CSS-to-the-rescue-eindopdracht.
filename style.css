@@ -6,7 +6,6 @@
 }
 
 :root {
-  --vuurvonkjesAfgelegdeAfstand: 175px; /* Hoe ver reiken de vuurvonkjes vanaf hun startpunt */
   --vuurpijlTotaleTijd: 4s; /* Hoe lang duurt het voordat een vuurpijl is opgestegen en alle vuurvonkjes verdwenen zijn */
   --vertragingsTijdPerVuurpijl: 1s; /* Hoe lang duurt het voordat de volgende vuurpijl komt nadat de vorige is opgestegen */
 
@@ -44,16 +43,11 @@ section:nth-of-type(1) {
 }
 
 section:nth-of-type(1) :is(h2, h3, h4) {
-  margin: 7.5px 0;
+  margin-top: 5px;
 }
 
-section:nth-of-type(1) ul { /* De kleurenlabels */
-  display: grid;
-  list-style: none;
-  width: fit-content;
-  grid-template-columns: repeat(4,1fr);
-  grid-gap: 1em;
-  margin: 7.5px 0;
+section:nth-of-type(1) h3:nth-of-type(n+2) {
+  margin-top: 15px;
 }
 
 input { /* Verplaats de checkboxes buiten het scherm */
@@ -61,7 +55,16 @@ input { /* Verplaats de checkboxes buiten het scherm */
   position: absolute;
 }
 
-section:nth-of-type(1) ul li label {
+/* De kleurenlabels controls */
+section:nth-of-type(1) ul { /* De kleurenlabels */
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 1em;
+  margin: 7.5px 0;
+}
+
+section:nth-of-type(1) ul:nth-of-type(1) li label,section:nth-of-type(1) ul:nth-of-type(2) li label {
   cursor: pointer;
   width: 40px;
   height: 40px;
@@ -125,7 +128,45 @@ input[id=color_2_blue]:checked ~ ul li li {--vuurvonkjesKleur2: var(--blue);}
 input[id=color_2_purple]:checked ~ ul li li {--vuurvonkjesKleur2: var(--purple);}
 input[id=color_2_pink]:checked ~ ul li li {--vuurvonkjesKleur2: var(--pink);}
 input[id=color_2_white]:checked ~ ul li li {--vuurvonkjesKleur2: var(--white);}
+/*  */
 
+/* Hoe ver reiken de vuurvonkjes vanaf hun startpunt */
+section:nth-of-type(1) ul:nth-of-type(3) { /* De vuurvonkjes afgelegde afstand controls*/
+  grid-template-columns: repeat(3,1fr);
+}
+
+section:nth-of-type(1) ul:nth-of-type(3) li label {
+  height: 60px;
+  display: block;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  line-height: 35px;
+  position: relative;
+  cursor: pointer;
+}
+
+input[id=vuurvonkjes_afgelegde_afstand_short]:checked ~ section ul label[for='vuurvonkjes_afgelegde_afstand_short']::before,
+input[id=vuurvonkjes_afgelegde_afstand_normal]:checked ~ section ul label[for='vuurvonkjes_afgelegde_afstand_normal']::before,
+input[id=vuurvonkjes_afgelegde_afstand_long]:checked ~ section ul label[for='vuurvonkjes_afgelegde_afstand_long']::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,25%);
+}
+
+input[id=vuurvonkjes_afgelegde_afstand_short]:checked ~ ul {--vuurvonkjesAfgelegdeAfstandOptie: 100px;} /* Verander de afgelegdeafstand variabele als er op een label geklikt wordt */
+input[id=vuurvonkjes_afgelegde_afstand_normal]:checked ~ ul {--vuurvonkjesAfgelegdeAfstandOptie: 175px;}
+input[id=vuurvonkjes_afgelegde_afstand_long]:checked ~ ul {--vuurvonkjesAfgelegdeAfstandOptie: 250px;}
+
+
+/*  */
 label[for=show_or_hide_control_panel] {
   position: absolute;
   width: 50px;
@@ -218,17 +259,15 @@ section:nth-of-type(2) ul li:nth-last-of-type(11n+1)::before {background-color: 
 /*  */
 
 
-/* Screen width: 1536 */
-/* Screen width: 754 */
 
 ul li div { /* Alle ronddraaiende banen */
   width: max(100vw,150vh);
   height: max(100vw,150vh);
   bottom: min(-35vw,-25vh);
   border-radius: 50%;
-  border: 1px solid white;
   position: absolute;
   animation-timing-function: cubic-bezier(0,.7,.7,1);
+  --vuurvonkjesAfgelegdeAfstand: var(--vuurvonkjesAfgelegdeAfstandOptie);
 }
 
 ul li:nth-of-type(1) div { /* De eerste ronddraaiende baan met vuurpijl */
