@@ -6,8 +6,8 @@
 }
 
 :root {
-  --vuurpijlTotaleTijd: 4s; /* Hoe lang duurt het voordat een vuurpijl is opgestegen en alle vuurvonkjes verdwenen zijn */
-  --vertragingsTijdPerVuurpijl: 1s; /* Hoe lang duurt het voordat de volgende vuurpijl komt nadat de vorige is opgestegen */
+  --vuurpijlTotaleTijd: 4.5s; /* Hoe lang duurt het voordat een vuurpijl is opgestegen en alle vuurvonkjes verdwenen zijn */
+  --vertragingsTijdPerVuurpijl: 1.75s; /* Hoe lang duurt het voordat de volgende vuurpijl komt nadat de vorige is opgestegen */
 
   --red: red; /* Alle kleuren gespecificeerd: */
   --orange: orange;
@@ -25,6 +25,17 @@ body {
   position: fixed;
   background: linear-gradient(0deg, rgba(0,24,130,1) 0%, rgba(0,0,0,1) 100%);
   background-attachment: fixed;
+}
+
+body > p { /* The info text: 'Set color scheme to dark to start the fireworks show' */
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
 }
 
 /* De section voor interacties */
@@ -73,6 +84,10 @@ section:nth-of-type(1) ul:nth-of-type(1) li label,section:nth-of-type(1) ul:nth-
   content: '';
   font-size: 0;
   position: relative;
+}
+
+label:focus-within {
+  display: none;
 }
 
 section:nth-of-type(1) ul li:nth-of-type(1) label {background-color: var(--red);} /* Geef alle klikbare labels de juiste kleur */
@@ -215,48 +230,36 @@ section:nth-of-type(2) ul {
 }
 
 section:nth-of-type(2) ul li /* De boomstronken */{
-  width: 25px;
   position: relative;
+  background: linear-gradient(180deg, var(--boomstronk_kleur) 15%, rgba(0,162,26,1) 20%, var(--bladeren_kleur) 100%);
+  clip-path: polygon(50% 100%, 18% 80%, 34% 67%, 7% 52%, 38% 40%, 0 22%, 40% 17%, 38% 0, 62% 0, 60% 17%, 100% 22%, 62% 40%, 93% 52%, 66% 67%, 82% 80%);
 }
 
-/* Random patroon maken voor de hoogte, kleur en de positie van de boomstronken */
-section:nth-of-type(2) ul li:nth-of-type(n) {height: 27.5px;}
-section:nth-of-type(2) ul li:nth-of-type(2n) {height: 35px;}
-section:nth-of-type(2) ul li:nth-of-type(3n) {height: 50px;}
-section:nth-of-type(2) ul li:nth-of-type(5n) {height: 42.5px;}
-section:nth-of-type(2) ul li:nth-of-type(7n) {height: 57.5px}
-section:nth-of-type(2) ul li:nth-of-type(11n) {height: 65px;}
+/* Random patroon maken voor de breedte, hoogte, kleur en de positie van de boomstronken en bladeren */
+section:nth-of-type(2) ul li:nth-of-type(n) {width: 72.5px; height: 72.5px;}
+section:nth-of-type(2) ul li:nth-of-type(2n) {width: 80px; height: 80px;}
+section:nth-of-type(2) ul li:nth-of-type(3n) {width: 50px; height: 50px;}
+section:nth-of-type(2) ul li:nth-of-type(5n) {width: 50px; height: 42.5px;}
+section:nth-of-type(2) ul li:nth-of-type(7n) {width: 57px; height: 57.5px;}
+section:nth-of-type(2) ul li:nth-of-type(11n) {width: 65px; height: 65px;}
 section:nth-of-type(2) ul li:nth-of-type(n-1) {transform: translateX(0px);}
 section:nth-of-type(2) ul li:nth-of-type(2n-1) {transform: translateX(-5px);}
 section:nth-of-type(2) ul li:nth-of-type(3n-1) {transform: translateX(5px);}
 section:nth-of-type(2) ul li:nth-of-type(5n-1) {transform: translateX(10px);}
 section:nth-of-type(2) ul li:nth-of-type(7n-1) {transform: translateX(-10px);}
 section:nth-of-type(2) ul li:nth-of-type(11n-1) {transform: translateX(15px);}
-section:nth-of-type(2) ul li:nth-last-of-type(n) {background-color: brown;}
-section:nth-of-type(2) ul li:nth-last-of-type(2n) {background-color: sienna;}
-section:nth-of-type(2) ul li:nth-last-of-type(3n) {background-color: saddlebrown;}
-section:nth-of-type(2) ul li:nth-last-of-type(5n) {background-color: darkred;}
-section:nth-of-type(2) ul li:nth-last-of-type(7n) {background-color: #954535;}
-section:nth-of-type(2) ul li:nth-last-of-type(11n) {background-color: #922724;}
-
-section:nth-of-type(2) ul li::before { /* De bladeren */
-  content: '';
-  width: 50px;
-  height: 40px;
-  position: absolute;
-  top: calc(100% - 10px);
-  left: -50%;
-  clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
-}
-
-/* Random patroon maken voor de kleur van de bladeren */
-section:nth-of-type(2) ul li:nth-last-of-type(n+1)::before {background-color: green;}
-section:nth-of-type(2) ul li:nth-last-of-type(2n+1)::before {background-color: darkgreen;}
-section:nth-of-type(2) ul li:nth-last-of-type(3n+1)::before {background-color: darkolivegreen;}
-section:nth-of-type(2) ul li:nth-last-of-type(5n+1)::before {background-color: forestgreen;}
-section:nth-of-type(2) ul li:nth-last-of-type(7n+1)::before {background-color: limegreen;}
-section:nth-of-type(2) ul li:nth-last-of-type(11n+1)::before {background-color: olivedrab;}
-/*  */
+section:nth-of-type(2) ul li:nth-last-of-type(n) {--boomstronk_kleur: brown;}
+section:nth-of-type(2) ul li:nth-last-of-type(2n) {--boomstronk_kleur: sienna;}
+section:nth-of-type(2) ul li:nth-last-of-type(3n) {--boomstronk_kleur: saddlebrown;}
+section:nth-of-type(2) ul li:nth-last-of-type(5n) {--boomstronk_kleur: darkred;}
+section:nth-of-type(2) ul li:nth-last-of-type(7n) {--boomstronk_kleur: #954535;}
+section:nth-of-type(2) ul li:nth-last-of-type(11n) {--boomstronk_kleur: #922724;}
+section:nth-of-type(2) ul li:nth-last-of-type(n+1) {--bladeren_kleur: green;}
+section:nth-of-type(2) ul li:nth-last-of-type(2n+1) {--bladeren_kleur: darkgreen;}
+section:nth-of-type(2) ul li:nth-last-of-type(3n+1) {--bladeren_kleur: darkolivegreen;}
+section:nth-of-type(2) ul li:nth-last-of-type(5n+1) {--bladeren_kleur: forestgreen;}
+section:nth-of-type(2) ul li:nth-last-of-type(7n+1) {--bladeren_kleur: limegreen;}
+section:nth-of-type(2) ul li:nth-last-of-type(11n+1) {--bladeren_kleur: olivedrab;}
 
 
 
@@ -274,24 +277,28 @@ ul li:nth-of-type(1) div { /* De eerste ronddraaiende baan met vuurpijl */
   right: 50%;
   --vertragingsTijd: 0s;
   animation: draaiendVuurwerkPadTegenKlokIn var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
+  animation-play-state: paused;
 }
 
 ul li:nth-of-type(2) div {
   left: 70%;
   --vertragingsTijd: var(--vertragingsTijdPerVuurpijl);
   animation: draaiendVuurwerkPadMetKlokMee var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
+  animation-play-state: paused;
 }
 
 ul li:nth-of-type(3) div {
   left: 50%;
   --vertragingsTijd: calc(var(--vertragingsTijdPerVuurpijl) * 2);
   animation: draaiendVuurwerkPadMetKlokMee var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
+  animation-play-state: paused;
 }
 
 ul li:nth-of-type(4) div {
   right: 70%;
   --vertragingsTijd: calc(var(--vertragingsTijdPerVuurpijl) * 3);
   animation: draaiendVuurwerkPadTegenKlokIn var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
+  animation-play-state: paused;
 }
 
 ul li div > ul:nth-of-type(1) { /* De vuurpijlen zelf */
@@ -304,6 +311,7 @@ ul li div > ul:nth-of-type(1) { /* De vuurpijlen zelf */
   border: 1px solid black;
   opacity: 0;
   animation: maakVuurpijlenOnzichtbaar var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
+  animation-play-state: paused;
   background: repeating-linear-gradient(-35deg,#a00,#a00 10px,#fff 10px,#fff 20px); /* Bron: https://css-tricks.com/stripes-css */
 }
 
@@ -326,6 +334,7 @@ ul li div > ul:nth-of-type(1) > li:nth-of-type(2) { /* Het aansteeklontje (geel 
   left: 2px;
   border-radius: 0px 0px 5px 5px;
   animation: brandendeLont var(--vuurpijlTotaleTijd) linear var(--vertragingsTijd) infinite forwards;
+  animation-play-state: paused;
 }
 
 ul li div > ul:nth-of-type(1) > li:nth-of-type(2)::before { /* Het aansteeklontje (oranje rand)  */
@@ -367,7 +376,7 @@ ul li div ul:nth-of-type(2) > li { /* Alle eerste generatie vuurvonkjes (de geza
   list-style-type: none;
   width: 40px;
   height: 8px;
-  border-radius: 10px;
+  border-radius: 15% 85% 85% 15% / 50% 50% 50% 50%;
   opacity: 0;
 }
 
@@ -413,6 +422,10 @@ ul li div ul:nth-of-type(2) > li:nth-of-type(12) {
   animation: animatieVuurvonkje12Gen1 var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
 }
 
+ul li div ul:nth-of-type(2) > li:nth-of-type(n) {
+  animation-play-state: paused;
+}
+
 ul li div ul:nth-of-type(2) > li:nth-of-type(2n+1) { /* Alle oneven vuurvonkjes */
   background-color: var(--vuurvonkjesKleur1);
   box-shadow: 0px 0px 10px var(--vuurvonkjesKleur1);
@@ -428,7 +441,7 @@ ul li div ul:nth-of-type(3) > li, ul li div ul:nth-of-type(4) > li {
   list-style-type: none;
   width: 40px;
   height: 8px;
-  border-radius: 5px;
+  border-radius: 15% 85% 85% 15% / 50% 50% 50% 50%;
   top: calc(50% - 35px - calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5));
   opacity: 0;
 }
@@ -477,6 +490,10 @@ ul li div ul:nth-of-type(3) > li:nth-of-type(11), ul li div ul:nth-of-type(4) > 
 ul li div ul:nth-of-type(3) > li:nth-of-type(12), ul li div ul:nth-of-type(4) > li:nth-of-type(12) {
   animation: animatieVuurvonkje12Gen2 var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
 }
+ul li div ul:nth-of-type(3) > li:nth-of-type(n), ul li div ul:nth-of-type(4) > li:nth-of-type(n) {
+  animation-play-state: paused;
+}
+
 
 ul li div ul:nth-of-type(3) > li:nth-of-type(2n), ul li div ul:nth-of-type(4) > li:nth-of-type(2n) { /* Alle oneven vuurvonkjes */
   background-color: var(--vuurvonkjesKleur1);
@@ -493,31 +510,31 @@ ul li div ul:nth-of-type(3) > li:nth-of-type(2n+1), ul li div ul:nth-of-type(4) 
 @keyframes maakVuurpijlenOnzichtbaar      {0% {opacity: 1;} 8.25% {opacity: 1;} 32% {opacity: 0.2;} 33%,100% {opacity: 0;}}
 @keyframes brandendeLont                  {0% {Height: 30px;} 33% {height: 0px;}}
 
-@keyframes animatieVuurvonkje1Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(90deg);}  50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(0px,                                            calc(var(--vuurvonkjesAfgelegdeAfstand)*-1))     rotate(90deg);}}
-@keyframes animatieVuurvonkje2Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(-60deg);} 50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5),   calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(-60deg);}}
-@keyframes animatieVuurvonkje3BoldGen1  {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(-30deg);} 65% {opacity: 1;}   66%,100% {opacity: 0; width: 12px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15), calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(-30deg);}}
+@keyframes animatieVuurvonkje1Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(270deg);}  50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(0px,                                            calc(var(--vuurvonkjesAfgelegdeAfstand)*-1))     rotate(270deg);}}
+@keyframes animatieVuurvonkje2Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(300deg);} 50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5),   calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(300deg);}}
+@keyframes animatieVuurvonkje3BoldGen1  {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(330deg);} 65% {opacity: 1;}   66%,100% {opacity: 0; width: 12px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15), calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(330deg);}}
 @keyframes animatieVuurvonkje4Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(0deg);}   50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(var(--vuurvonkjesAfgelegdeAfstand),             0px)                                             rotate(0deg);}}
 @keyframes animatieVuurvonkje5Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(30deg);}  50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15), calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5))    rotate(30deg);}}
 @keyframes animatieVuurvonkje6Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(60deg);}  50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5),   calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15))  rotate(60deg);}}
 @keyframes animatieVuurvonkje7Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(90deg);}  50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(0px,                                            var(--vuurvonkjesAfgelegdeAfstand))              rotate(90deg);}}
-@keyframes animatieVuurvonkje8Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(-60deg);} 50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15))  rotate(-60deg);}}
-@keyframes animatieVuurvonkje9Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(-30deg);} 50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5))    rotate(-30deg);}}
-@keyframes animatieVuurvonkje10Gen1     {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(0deg);}   50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-1),    0px)                                             rotate(0deg);}}
-@keyframes animatieVuurvonkje11BoldGen1 {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(30deg);}  65% {opacity: 1;}   66%,100% {opacity: 0; width: 12px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(30deg);}}
-@keyframes animatieVuurvonkje12Gen1     {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(60deg);}  50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(60deg);}}
+@keyframes animatieVuurvonkje8Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(120deg);} 50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15))  rotate(120deg);}}
+@keyframes animatieVuurvonkje9Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(150deg);} 50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5))    rotate(150deg);}}
+@keyframes animatieVuurvonkje10Gen1     {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(180deg);}  50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-1),    0px)                                             rotate(180deg);}}
+@keyframes animatieVuurvonkje11BoldGen1 {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(210deg);}  65% {opacity: 1;}   66%,100% {opacity: 0; width: 12px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(210deg);}}
+@keyframes animatieVuurvonkje12Gen1     {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(240deg);}  50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(240deg);}}
 
-@keyframes animatieVuurvonkje1Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(90deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(0px,                                            calc(var(--vuurvonkjesAfgelegdeAfstand)*-1))     rotate(90deg);}}
-@keyframes animatieVuurvonkje2Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(-60deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5),   calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(-60deg);}}
-@keyframes animatieVuurvonkje3Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(-30deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15), calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(-30deg);}}
+@keyframes animatieVuurvonkje1Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(270deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(0px,                                            calc(var(--vuurvonkjesAfgelegdeAfstand)*-1))     rotate(270deg);}}
+@keyframes animatieVuurvonkje2Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(300deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5),   calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(300deg);}}
+@keyframes animatieVuurvonkje3Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(330deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15), calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(330deg);}}
 @keyframes animatieVuurvonkje4Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(0deg);}   83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(var(--vuurvonkjesAfgelegdeAfstand),             0px)                                             rotate(0deg);}}
 @keyframes animatieVuurvonkje5Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(30deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15), calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5))    rotate(30deg);}}
 @keyframes animatieVuurvonkje6Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(60deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5),   calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15))  rotate(60deg);}}
 @keyframes animatieVuurvonkje7Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(90deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(0px,                                            var(--vuurvonkjesAfgelegdeAfstand))              rotate(90deg);}}
-@keyframes animatieVuurvonkje8Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(-60deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15))  rotate(-60deg);}}
-@keyframes animatieVuurvonkje9Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(-30deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5))    rotate(-30deg);}}
-@keyframes animatieVuurvonkje10Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(0deg);}   83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-1),    0px)                                             rotate(0deg);}}
-@keyframes animatieVuurvonkje11Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(30deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(30deg);}}
-@keyframes animatieVuurvonkje12Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(60deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(60deg);}}
+@keyframes animatieVuurvonkje8Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(120deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15))  rotate(120deg);}}
+@keyframes animatieVuurvonkje9Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(150deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5))    rotate(150deg);}}
+@keyframes animatieVuurvonkje10Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(180deg);}   83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-1),    0px)                                             rotate(180deg);}}
+@keyframes animatieVuurvonkje11Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(210deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(210deg);}}
+@keyframes animatieVuurvonkje12Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(240deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(240deg);}}
 
 @media (max-width: 1000px) { /* Verwijder een aantal bomen en maak de bomen kleiner als het scherm te klein wordt. */
   section:nth-of-type(2) ul li {
@@ -528,6 +545,68 @@ ul li div ul:nth-of-type(3) > li:nth-of-type(2n+1), ul li div ul:nth-of-type(4) 
     height: 35px;
   }
   section:nth-of-type(2) ul li:nth-of-type(n+10) {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) { /* Als prefers-color-scheme op dark is ingeschakeld, beginnen alle animaties pas */
+  ul li:nth-of-type(n) div { /* Alle ronddraaiende vuurwerkbanen */
+    animation-play-state: running;
+  }
+
+  ul li div > ul:nth-of-type(1) { /* De vuurpijlen onzichtbaar maken*/
+    animation-play-state: running;
+  }
+
+  ul li div > ul:nth-of-type(1) > li:nth-of-type(2) { /* De brandende lontjes */
+    animation-play-state: running;
+  }
+
+  ul li div ul:nth-of-type(2) > li:nth-of-type(n) { /* Alle eerste generatie vuurvonkjes */
+    animation-play-state: running;
+  }
+
+  ul li div ul:nth-of-type(3) > li:nth-of-type(n), ul li div ul:nth-of-type(4) > li:nth-of-type(n) { /* Alle tweede generatie vuurvonkjes */
+    animation-play-state: running;
+  }
+
+  body > p { /* The info text: 'Set color scheme to dark to start the fireworks show' */
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion) { /* Als prefers-reduced-motion is ingeschakeld, zet alle animaties stil op een 'spectaculair' moment */
+  ul li:nth-of-type(n) div { /* Alle ronddraaiende vuurwerkbanen */
+    animation-delay: -1.4s;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+  }
+
+  ul li div > ul:nth-of-type(1) { /* De vuurpijlen onzichtbaar maken*/
+    animation-delay: -1s;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+  }
+
+  ul li div > ul:nth-of-type(1) > li:nth-of-type(2) { /* De brandende lontjes */
+    animation-delay: -1.4s;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+  }
+
+  ul li div ul:nth-of-type(2) > li:nth-of-type(n) { /* Alle eerste generatie vuurvonkjes */
+    animation-delay: -2.6s;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+  }
+
+  ul li div ul:nth-of-type(3) > li:nth-of-type(n), ul li div ul:nth-of-type(4) > li:nth-of-type(n) { /* Alle tweede generatie vuurvonkjes */
+    animation-delay: -3.8s;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+  }
+
+  body > p { /* The info text: 'Set color scheme to dark to start the fireworks show' */
     display: none;
   }
 }

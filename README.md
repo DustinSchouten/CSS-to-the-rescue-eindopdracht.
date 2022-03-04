@@ -83,7 +83,7 @@ Zo ziet het eruit op een kleiner (gedraaid) scherm:
 ![](Documentatie/Week_3/Screenshot_3.png)
 
 ### Het toevoegen van sub-vuurvonkjes
-De animatie die ik voorheen had gemaakt telde 12 vuurvonkjes voor iedere vuurpijl. Dit waren, zoals eerder vermeld, allemaal list-items in een unordered-list. Twee vuurvonkjes heb ik wat dikker gemaakt en met een hogere opacity wat langer laten 'branden'. Zie de screenshot hieronder: 
+De animatie die ik voorheen had gemaakt telde 12 vuurvonkjes voor iedere vuurpijl. Dit waren, zoals eerder vermeld, allemaal list-items in een unordered-list. Twee vuurvonkjes heb ik wat dikker gemaakt en met een hogere opacity wat langer laten 'branden'. Zie de screenshot hieronder:
 
 ![](Documentatie/Week_3/Screenshot_4.png)
 
@@ -104,9 +104,10 @@ Hiervoor heb ik gebruikgemaakt van CSS randomness door hierbij gebruik te maken 
 
 Al met al, kan ik vermelden dat er nog geen experimenten met CSS mislukt zijn.
 
+Een wijziging die ik ga doorvoeren is de manier waarop de bomen uitgetekend zijn. Deze kunnen d.m.v. clip-paths nog mooier worden gemaakt.
+
 Mijn nieuwe uitdagingen voor komende week:
 - Aankomende week ga ik proberen om het reduce-motion principe toe te passen. Ik proberen om met dit principe te werken en een soort catalogus op te zetten met afbeeldingen van de animaties.
-- 
+- Daarnaast ga ik proberen om mijn vuurwerkshow wat toegankelijker te maken. Ik weet alleen nog niet welke technieken ik ga onderzoeken en implementeren om de toegankelijkheid te vergroten.
 
 Verder ga ik om de show af te maken wat meer interacties aan het control panel toevoegen.
-
