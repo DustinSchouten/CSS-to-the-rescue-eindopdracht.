@@ -161,8 +161,13 @@ Als ik in de toekomst met dit project verder zou werken, dan zal ik proberen om 
 
 ### Alle gebruikte bronnen:
 https://fonts.google.com/specimen/Poppins
+
 https://cssgradient.io/
+
 https://css-tricks.com/stripes-css
+
 https://bennettfeely.com/clippy/
+
 https://9elements.github.io/fancy-border-radius/
+
 https://css-tricks.com/css-keyframe-animation-delay-iterations/
