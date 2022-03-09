@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; /* https://fonts.google.com/specimen/Poppins */
   user-select: none;
 }
 
@@ -23,7 +23,7 @@ body {
   width: 100%;
   height: 100%;
   position: fixed;
-  background: linear-gradient(0deg, rgba(0,24,130,1) 0%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(0deg, rgba(0,24,130,1) 0%, rgba(0,0,0,1) 100%); /* https://cssgradient.io/ */
   background-attachment: fixed;
 }
 
@@ -53,11 +53,7 @@ section:nth-of-type(1) {
   transition: 0.5s;
 }
 
-section:nth-of-type(1) :is(h2, h3, h4) {
-  margin-top: 5px;
-}
-
-section:nth-of-type(1) h3:nth-of-type(n+2) {
+section:nth-of-type(1) :is(h2, h3) {
   margin-top: 15px;
 }
 
@@ -127,6 +123,13 @@ input[id=color_2_white]:checked ~ section ul label[for='color_2_white']::before 
   transform: translate(-50%,-50%);
 }
 
+input[id='show_or_hide_control_panel']:focus ~ section label[for='show_or_hide_control_panel'], /* Wanneer de gebruiker tabt, laat een grijze gestreepte rand zien om de interacties */
+input[name=color_1]:focus ~ section:nth-of-type(1) ul:nth-of-type(1),
+input[name=color_2]:focus ~ section:nth-of-type(1) ul:nth-of-type(2),
+input[name=vuurvonkjes_afgelegde_afstand]:focus ~ section:nth-of-type(1) ul:nth-of-type(3) {
+  border: 3px dashed #aaa;
+}
+
 input[id=color_1_red]:checked ~ ul li li {--vuurvonkjesKleur1: var(--red);} /* Verander de kleur variabele als er op een label geklikt wordt */
 input[id=color_1_orange]:checked ~ ul li li {--vuurvonkjesKleur1: var(--orange);}
 input[id=color_1_yellow]:checked ~ ul li li {--vuurvonkjesKleur1: var(--yellow);}
@@ -182,7 +185,7 @@ input[id=vuurvonkjes_afgelegde_afstand_long]:checked ~ ul {--vuurvonkjesAfgelegd
 
 
 /*  */
-label[for=show_or_hide_control_panel] {
+label[for=show_or_hide_control_panel] { /* Het > knopje om het control panel te laten verschijnen of te verbergen */
   position: absolute;
   width: 50px;
   height: 50px;
@@ -231,8 +234,8 @@ section:nth-of-type(2) ul {
 
 section:nth-of-type(2) ul li /* De boomstronken */{
   position: relative;
-  background: linear-gradient(180deg, var(--boomstronk_kleur) 15%, rgba(0,162,26,1) 20%, var(--bladeren_kleur) 100%);
-  clip-path: polygon(50% 100%, 18% 80%, 34% 67%, 7% 52%, 38% 40%, 0 22%, 40% 17%, 38% 0, 62% 0, 60% 17%, 100% 22%, 62% 40%, 93% 52%, 66% 67%, 82% 80%);
+  background: linear-gradient(180deg, var(--boomstronk_kleur) 15%, rgba(0,162,26,1) 20%, var(--bladeren_kleur) 100%); /* https://cssgradient.io/ */
+  clip-path: polygon(50% 100%, 18% 80%, 34% 67%, 7% 52%, 38% 40%, 0 22%, 40% 17%, 38% 0, 62% 0, 60% 17%, 100% 22%, 62% 40%, 93% 52%, 66% 67%, 82% 80%); /* https://bennettfeely.com/clippy/ */
 }
 
 /* Random patroon maken voor de breedte, hoogte, kleur en de positie van de boomstronken en bladeren */
@@ -367,7 +370,7 @@ ul li div > ul:nth-of-type(1) { /* De vuurpijlen zelf */
   opacity: 0;
   animation: maakVuurpijlenOnzichtbaar var(--vuurpijlTotaleTijd) ease var(--vertragingsTijd) infinite forwards;
   animation-play-state: paused;
-  background: repeating-linear-gradient(-35deg,#a00,#a00 10px,#fff 10px,#fff 20px); /* Bron: https://css-tricks.com/stripes-css */
+  background: repeating-linear-gradient(-35deg,#a00,#a00 10px,#fff 10px,#fff 20px); /* https://css-tricks.com/stripes-css */
 }
 
 ul li div > ul:nth-of-type(1) > li:nth-of-type(1) { /* Het rode driehoekje boven de vuurpijlen */
@@ -399,14 +402,14 @@ ul li div > ul:nth-of-type(1) > li:nth-of-type(2)::before { /* Het aansteeklontj
   height: 8px;
   top: 95%;
   left: -150%;
-  clip-path: ellipse(30% 50% at 50% 50%);
+  clip-path: ellipse(30% 50% at 50% 50%); /* https://bennettfeely.com/clippy/ */
   background-color: #fa0;
 }
 
 ul li div > ul:nth-of-type(1) > li:nth-of-type(2)::after { /* Het aansteeklontje (gele binnenkant) */
   content: '';
   position: absolute;
-  clip-path: ellipse(30% 50% at 50% 50%);
+  clip-path: ellipse(30% 50% at 50% 50%); /* https://bennettfeely.com/clippy/ */
   background-color: #ff0;
   width: 6px;
   height: 6px;
@@ -431,7 +434,7 @@ ul li div ul:nth-of-type(2) > li { /* Alle eerste generatie vuurvonkjes (de geza
   list-style-type: none;
   width: 40px;
   height: 8px;
-  border-radius: 15% 85% 85% 15% / 50% 50% 50% 50%;
+  border-radius: 15% 85% 85% 15% / 50% 50% 50% 50%; /* https://9elements.github.io/fancy-border-radius/ */
   opacity: 0;
 }
 
@@ -496,7 +499,7 @@ ul li div ul:nth-of-type(3) > li, ul li div ul:nth-of-type(4) > li {
   list-style-type: none;
   width: 40px;
   height: 8px;
-  border-radius: 15% 85% 85% 15% / 50% 50% 50% 50%;
+  border-radius: 15% 85% 85% 15% / 50% 50% 50% 50%; /* https://9elements.github.io/fancy-border-radius/ */
   top: calc(50% - 35px - calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5));
   opacity: 0;
 }
@@ -564,9 +567,9 @@ ul li div ul:nth-of-type(3) > li:nth-of-type(2n+1), ul li div ul:nth-of-type(4) 
 @keyframes draaiendVuurwerkPadTegenKlokIn {0% {transform: rotate(30deg);} 33%,100% {transform: rotate(-10deg);}}
 @keyframes draaiendVuurwerkPadMetKlokMee  {0% {transform: scaleX(-1) rotate(30deg);} 33%,100% {transform: scaleX(-1) rotate(-10deg);}}
 @keyframes maakVuurpijlenOnzichtbaar      {0% {opacity: 1;} 8.25% {opacity: 1;} 32% {opacity: 0.2;} 33%,100% {opacity: 0;}}
-@keyframes brandendeLont                  {0% {Height: 30px;} 33% {height: 0px;}}
+@keyframes brandendeLont                  {0% {Height: 50px;} 33% {height: 0px;}}
 
-@keyframes animatieVuurvonkje1Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(270deg);} 50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(0px,                                            calc(var(--vuurvonkjesAfgelegdeAfstand)*-1))     rotate(270deg);}}
+@keyframes animatieVuurvonkje1Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(270deg);} 50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(0px,                                            calc(var(--vuurvonkjesAfgelegdeAfstand)*-1))     rotate(270deg);}} /* https://css-tricks.com/css-keyframe-animation-delay-iterations/ */
 @keyframes animatieVuurvonkje2Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(300deg);} 50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5),   calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(300deg);}}
 @keyframes animatieVuurvonkje3BoldGen1  {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(330deg);} 65% {opacity: 1;}   66%,100% {opacity: 0; width: 12px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15), calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(330deg);}}
 @keyframes animatieVuurvonkje4Gen1      {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(0deg);}   50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(var(--vuurvonkjesAfgelegdeAfstand),             0px)                                             rotate(0deg);}}
@@ -602,7 +605,7 @@ ul li div ul:nth-of-type(3) > li:nth-of-type(2n+1), ul li div ul:nth-of-type(4) 
     width: 40px;
     height: 35px;
   }
-  section:nth-of-type(2) ul li:nth-of-type(n+10) {
+  section:nth-of-type(2) ul li:nth-of-type(n+11) { /* Laat de eerste tien bomen zien en laat alle andere bomen (beginnend bij de elfde boom) weg. */
     display: none;
   }
 }

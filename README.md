@@ -67,7 +67,7 @@ Mijn nieuwe uitdagingen voor komende week:
 
 - Verder leek het me een leuk idee om voor alle vuurpijlen elk vuurvonkje apart te nemen en deze opnieuw in 'sub' vuurvonkjes te laten ontploffen. Dit zal ik proberen door elk vuurvonkje, nu nog een list-item, opnieuw als unordered-list met list-items te definieren.
 
-## Voorjaarsvakantie + Week 3
+## Week 3
 - Laat je voortgang zien ('praatje met plaatjes').
 In deze week (en in de voorjaarsvakantie) heb ik me beziggehouden met een aantal zaken:
 
@@ -94,10 +94,11 @@ Ook dit was vrij lastig omdat de vuurpijlen uit verschillende animaties bestaan,
 Om dit probleem op te lossen heb ik uiteindelijk de animaties als volgt opgesteld (ik heb niet letterlijk deze namen gebruikt):
 
 - vuurpijl_opstijgen: 0% {beginpunt van de animatie} 33%,100% {eindpunt van de animatie}
-- eerste_generatie_vuurvonkjes_animeren: 0%,32% {zet de opacity op 0} 33% {beginpunt van de animatie} 66%,100% {eindpunt van de animatie}
-- tweede_generatie_vuurvonkjes_animeren: 0%,65% {zet de opacity op 0} 66% {beginpunt van de animatie} 100% {eindpunt van de animatie}
+- eerste_generatie_vuurvonkjes_animeren: 0%,32% {zet de opacity op 0, zodat de animatie niet te zien is} 33% {beginpunt van de animatie} 66%,100% {eindpunt van de animatie}
+- tweede_generatie_vuurvonkjes_animeren: 0%,65% {zet de opacity op 0, zodat de animatie niet te zien is} 66% {beginpunt van de animatie} 100% {eindpunt van de animatie}
 
 Op deze manier worden alle animaties in 1/3 van de tijd afgespeeld. De totale tijdsduur van alle animaties is de opsomming van alledrie de animaties apart.
+Dit idee heb op deze website gevonden: https://css-tricks.com/css-keyframe-animation-delay-iterations/
 
 ### Het toevoegen van bomen.
 Hiervoor heb ik gebruikgemaakt van CSS randomness door hierbij gebruik te maken van priemgetallen. Hiermee heb ik random patronen gecreëerd in de kleur, de hoogte en de positie van de boomstronken en in de kleur van de bladeren. Dit was voor mij een nieuwe manier om de kracht van CSS te gebruiken, zonder hierbij JavaScript te hoeven toepassen. Dit principe implementeren verliep voor mij redelijk soepel. De boombladeren heb ik overigens gemaakt met CSS-clip-paths. Ook dat was voor mij nieuw.
@@ -107,7 +108,60 @@ Al met al, kan ik vermelden dat er nog geen experimenten met CSS mislukt zijn.
 Een wijziging die ik ga doorvoeren is de manier waarop de bomen uitgetekend zijn. Deze kunnen d.m.v. clip-paths nog mooier worden gemaakt.
 
 Mijn nieuwe uitdagingen voor komende week:
-- Aankomende week ga ik proberen om het reduce-motion principe toe te passen. Ik proberen om met dit principe te werken en een soort catalogus op te zetten met afbeeldingen van de animaties.
+- Aankomende week ga ik proberen om het reduce-motion principe toe te passen. Ik proberen om met dit principe te werken en een soort catalogus op te zetten met een afbeelding van de animaties.
+- Ook ga ik proberen om de vuurwerkshow te laten starten wanneer de gebruiker zijn/haar apparaat op dark mode ga zetten. Hierbij zal ik een melding op het scherm laten zien als het apparaat op light mode staat.
 - Daarnaast ga ik proberen om mijn vuurwerkshow wat toegankelijker te maken. Ik weet alleen nog niet welke technieken ik ga onderzoeken en implementeren om de toegankelijkheid te vergroten.
 
 Verder ga ik om de show af te maken wat meer interacties aan het control panel toevoegen.
+
+## Week 4
+### Het eindresultaat:
+Het eindresultaat wat ik ga opleveren is een volledig responsive en door de gebruiker te beïnvloeden vuurwerkshow. In de show worden telkens vier vuurpijlen, die allemaal uit verschillende richtingen komen, herhaaldelijk afgestoken. Uit iedere vuurpijl verschijnen twaalf vuurvonkjes waarvan uit twee van deze opnieuw twaalf vuurvonkjes verschijnen.
+
+De gebruiker kan met het bedieningspaneel de kleuren van de even en oneven vuurvonkjes aanpassen, waarbij er uit acht verschillende kleuren kan worden gekozen. Ook kan de reikwijdte van de vuurvonkjes worden aangepast (kort, normaal en lang).
+Zie de screenshots hieronder:
+
+Op groot scherm:
+![](Documentatie/Week_4/Screenshot_1.png)
+
+Responsive:
+![](Documentatie/Week_4/Screenshot_2.png)
+
+Ook is het me gelukt om de vuurwerkshow op dark mode te laten starten. Wanneer het apparaat van de gebruiker op light mode staat, wordt de volgende melding weergegeven:
+![](Documentatie/Week_4/Screenshot_3.png)
+Alle animaties in mijn show heb ik default op animation-play-state: paused; gezet. Deze animaties worden alleen op running gezet als dark mode ingeschakeld is.
+
+Verder heb ik geëxperimenteerd met het reduce-motion principe. Voor mensen die deze functie op hun apparaat hebben ingeschakeld, krijgen ze het volgende beeld te zien.
+![](Documentatie/Week_4/Screenshot_4.png)
+Dit beeld beweegt niet, maar alle animaties zijn op een 'spectaculair' moment stilgezet. Deze functie overschrijft overigens de functie die alle animaties op running zet bij dark mode.
+
+Om de show mooier te maken, heb ik bomen en een sterrenhemel toegevoegd.
+Om de show ook toegankelijker te maken heb ik focus states geïmplementeerd waardoor je als gebruiker ook d.m.v. de spatiebalk (om op het pijltje te klikken), de tab-toets en de pijltjestoetsen kan zien op welk gedeelte van het control panel je bent.
+
+### Wat ging makkelijk, moeilijk en waar ben ik trots op:
+Het meest trots ben ik vooral op het feit dat ik zonder id's (inputs en labels uitgezonderd), classes en javascript alsnog zo'n mooie vuurwerkshow heb weten te creëren.
+
+Ik heb eerder in dit procesverslag al een aantal zaken opgenoemd waarvan ik vond dat dat lastig ging. De meest lastige zaken waren voor mij het responsive maken d.m.v. min() en max() en het achter elkaar laten afspelen van de animaties. Wat ik ook zeer lastig vond was het maken van de onzichtbare ronddraaiende banen om de vuurpijlen in een curved baan te laten opstijgen.
+
+Ook zijn er een hoop dingen soepel verlopen. Ik vond het werken met generators (zoals clip-path en background-linear-gradient) vrij gemakkelijk gaan en ook het toevoegen van de vuurvonkjes zelf ging niet al te moeilijk. Wel lastig was het maken van de wat dikkere vuurvonkjes.
+
+
+### 'Mislukte' experimenten:
+Je kunt misschien niet echt zeggen dat ik dit experiment als mislukt kan beschouwen, maar ik heb geprobeerd om elke ster in de sterrenhemel een eigen snelheid van bewegen mee te geven d.m.v. custom variables. Deze variables wilde ik vervolgens met keyframes laten veranderen om op die manier een animatie te creëren. Zie de screenshot hieronder:
+![](Documentatie/Week_4/Screenshot_5.png)
+
+Echter kwam ik erachter dat dit niet werkte en dat je custom variables niet met keyframes kan laten veranderen. In plaats daarvan heb ik uiteindelijk twee groepen (unordered lists) gemaakt en die allebei een eigen animation-duration gegeven.
+
+### Nieuwe inzichten:
+Het meeste wat ik bij dit project heb geleerd, is het gebruik van de verschillende selectoren. Ik heb bijvoorbeeld geleerd wat het verschil is tussen nth-child() en nth-of-type(). Ook heb ik geleerd hoe de > selector werkt. Ook het gebruik van de ~ selector om bepaalde elementen te selecteren, was voor mij nieuw. Dit kwam vooral erg goed van pas bij het werkzaam maken van de klikbare labels die bij de inputs horen. Op die manier kon ik namelijk de juiste variabelen bereiken.
+
+### Eventuele toekomstplannen:
+Als ik in de toekomst met dit project verder zou werken, dan zal ik proberen om wat meer verschillende soorten animaties toe te voegen. Denk hierbij aan de manier waarop de vuurpijl opstijgt. Dan zou ik bijvoorbeeld een zigzagpatroon kunnen maken. Ook zou ik het wellicht wel leuk vinden om de gebruiker de mogelijkheid te geven om de vuurpijlen zelf aan te steken met een aansteker als muis.
+
+### Alle gebruikte bronnen:
+https://fonts.google.com/specimen/Poppins
+https://cssgradient.io/
+https://css-tricks.com/stripes-css
+https://bennettfeely.com/clippy/
+https://9elements.github.io/fancy-border-radius/
+https://css-tricks.com/css-keyframe-animation-delay-iterations/
