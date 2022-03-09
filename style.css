@@ -307,16 +307,16 @@ section:nth-of-type(3) ul li:nth-of-type(11n) {transform: translate(15em,5em);}
 section:nth-of-type(3) ul li:nth-of-type(13n) {transform: translate(5em,-15em);}
 section:nth-of-type(3) ul li:nth-of-type(17n) {transform: translate(12.5em,-12.5em);}
 section:nth-of-type(3) ul li:nth-of-type(19n) {transform: translate(-7.5em,7.5em);}
-section:nth-of-type(3) ul li:nth-of-type(n+1) {background-color: white; box-shadow: 0 0 5px 2px white}
-section:nth-of-type(3) ul li:nth-of-type(2n+1) {background-color: #ffe; box-shadow: 0 0 5px 2px #ffe}
-section:nth-of-type(3) ul li:nth-of-type(3n+1) {background-color: #ffa; box-shadow: 0 0 5px 2px #ffa}
-section:nth-of-type(3) ul li:nth-of-type(5n+1) {background-color: #f5f5d3; box-shadow: 0 0 5px 2px #f5f5d3}
-section:nth-of-type(3) ul li:nth-of-type(7n+1) {background-color: #d4d4b2; box-shadow: 0 0 5px 2px #d4d4b2}
-section:nth-of-type(3) ul li:nth-last-of-type(n) {width: 3px; height: 3px}
-section:nth-of-type(3) ul li:nth-last-of-type(2n) {width: 3.5px; height: 3.5px}
-section:nth-of-type(3) ul li:nth-last-of-type(3n) {width: 2.5px; height: 2.5px}
-section:nth-of-type(3) ul li:nth-last-of-type(5n) {width: 4px; height: 4px}
-section:nth-of-type(3) ul li:nth-last-of-type(7n) {width: 5px; height: 5px}
+section:nth-of-type(3) ul li:nth-of-type(n+1) {background-color: white; box-shadow: 0 0 5px 2px white;}
+section:nth-of-type(3) ul li:nth-of-type(2n+1) {background-color: #ffe; box-shadow: 0 0 5px 2px #ffe;}
+section:nth-of-type(3) ul li:nth-of-type(3n+1) {background-color: #ffa; box-shadow: 0 0 5px 2px #ffa;}
+section:nth-of-type(3) ul li:nth-of-type(5n+1) {background-color: #f5f5d3; box-shadow: 0 0 5px 2px #f5f5d3;}
+section:nth-of-type(3) ul li:nth-of-type(7n+1) {background-color: #d4d4b2; box-shadow: 0 0 5px 2px #d4d4b2;}
+section:nth-of-type(3) ul li:nth-last-of-type(n) {width: 3px; height: 3px;}
+section:nth-of-type(3) ul li:nth-last-of-type(2n) {width: 3.5px; height: 3.5px;}
+section:nth-of-type(3) ul li:nth-last-of-type(3n) {width: 2.5px; height: 2.5px;}
+section:nth-of-type(3) ul li:nth-last-of-type(5n) {width: 4px; height: 4px;}
+section:nth-of-type(3) ul li:nth-last-of-type(7n) {width: 5px; height: 5px;}
 /*  */
 
 
@@ -582,18 +582,18 @@ ul li div ul:nth-of-type(3) > li:nth-of-type(2n+1), ul li div ul:nth-of-type(4) 
 @keyframes animatieVuurvonkje11BoldGen1 {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(210deg);} 65% {opacity: 1;}   66%,100% {opacity: 0; width: 12px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(210deg);}}
 @keyframes animatieVuurvonkje12Gen1     {0%,32% {opacity: 0;} 33% {opacity: 1; width: 40px; transform: rotate(240deg);} 50% {opacity: 0.8;} 66%,100% {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(240deg);}}
 
-@keyframes animatieVuurvonkje1Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(270deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(0px,                                            calc(var(--vuurvonkjesAfgelegdeAfstand)*-1))     rotate(270deg);}}
-@keyframes animatieVuurvonkje2Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(300deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5),   calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(300deg);}}
-@keyframes animatieVuurvonkje3Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(330deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15), calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(330deg);}}
-@keyframes animatieVuurvonkje4Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(0deg);}   83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(var(--vuurvonkjesAfgelegdeAfstand),             0px)                                             rotate(0deg);}}
-@keyframes animatieVuurvonkje5Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(30deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15), calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5))    rotate(30deg);}}
-@keyframes animatieVuurvonkje6Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(60deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5),   calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15))  rotate(60deg);}}
-@keyframes animatieVuurvonkje7Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(90deg);}  83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(0px,                                            var(--vuurvonkjesAfgelegdeAfstand))              rotate(90deg);}}
-@keyframes animatieVuurvonkje8Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(120deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15))  rotate(120deg);}}
-@keyframes animatieVuurvonkje9Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(150deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5))    rotate(150deg);}}
-@keyframes animatieVuurvonkje10Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(180deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-1),    0px)                                             rotate(180deg);}}
-@keyframes animatieVuurvonkje11Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(210deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(210deg);}}
-@keyframes animatieVuurvonkje12Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(240deg);} 83% {opacity: 0.8;} 100% {opacity: 0; width: 8px; transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(240deg);}}
+@keyframes animatieVuurvonkje1Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(270deg);} 83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(0px,                                            calc(var(--vuurvonkjesAfgelegdeAfstand)*-1))     rotate(270deg);}}
+@keyframes animatieVuurvonkje2Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(300deg);} 83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5),   calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(300deg);}}
+@keyframes animatieVuurvonkje3Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(330deg);} 83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15), calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(330deg);}}
+@keyframes animatieVuurvonkje4Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(0deg);}   83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(var(--vuurvonkjesAfgelegdeAfstand),             0px)                                             rotate(0deg);}}
+@keyframes animatieVuurvonkje5Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(30deg);}  83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15), calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5))    rotate(30deg);}}
+@keyframes animatieVuurvonkje6Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(60deg);}  83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5),   calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15))  rotate(60deg);}}
+@keyframes animatieVuurvonkje7Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(90deg);}  83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(0px,                                            var(--vuurvonkjesAfgelegdeAfstand))              rotate(90deg);}}
+@keyframes animatieVuurvonkje8Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(120deg);} 83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*13/15))  rotate(120deg);}}
+@keyframes animatieVuurvonkje9Gen2      {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(150deg);} 83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*0.5))    rotate(150deg);}}
+@keyframes animatieVuurvonkje10Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(180deg);} 83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-1),    0px)                                             rotate(180deg);}}
+@keyframes animatieVuurvonkje11Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(210deg);} 83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15),calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5))   rotate(210deg);}}
+@keyframes animatieVuurvonkje12Gen2     {0%,65% {opacity: 0;} 66% {opacity: 1; width: 40px; transform: rotate(240deg);} 83% {opacity: 0.8;} 100%     {opacity: 0; width: 8px;  transform: translate(calc(var(--vuurvonkjesAfgelegdeAfstand)*-0.5),  calc(var(--vuurvonkjesAfgelegdeAfstand)*-13/15)) rotate(240deg);}}
 
 @keyframes bewegendeSterrenHemel        {0% {transform: translateX(-200px);opacity: 0;} 10%,90% {opacity: 1;} 100% {opacity: 0; transform: translateX(200px);}}
 
