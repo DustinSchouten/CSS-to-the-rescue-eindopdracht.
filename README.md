@@ -147,7 +147,8 @@ Ook zijn er een hoop dingen soepel verlopen. Ik vond het werken met generators (
 
 
 ### 'Mislukte' experimenten:
-Je kunt misschien niet echt zeggen dat ik dit experiment als mislukt kan beschouwen, maar ik heb geprobeerd om elke ster in de sterrenhemel een eigen snelheid van bewegen mee te geven d.m.v. custom variables. Deze variables wilde ik vervolgens met keyframes laten veranderen om op die manier een animatie te creëren. Zie de screenshot hieronder:
+Je kunt misschien niet echt zeggen dat ik dit experiment als mislukt kan beschouwen, maar ik heb geprobeerd om elke ster in de sterrenhemel een eigen snelheid van bewegen mee te geven d.m.v. custom variables. Deze variables wilde ik vervolgens met keyframes laten veranderen om op die manier een animatie te creëren.
+Zie de screenshot hieronder:
 ![](Documentatie/Week_4/Screenshot_5.png)
 
 Echter kwam ik erachter dat dit niet werkte en dat je custom variables niet met keyframes kan laten veranderen. In plaats daarvan heb ik uiteindelijk twee groepen (unordered lists) gemaakt en die allebei een eigen animation-duration gegeven.
