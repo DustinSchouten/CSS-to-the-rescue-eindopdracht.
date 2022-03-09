@@ -129,9 +129,6 @@ input[name=color_2]:focus ~ section:nth-of-type(1) ul:nth-of-type(2),
 input[name=vuurvonkjes_afgelegde_afstand]:focus ~ section:nth-of-type(1) ul:nth-of-type(3) {
   outline: 2px dashed #aaa;
 }
-input[name=color_1]:active ~ section:nth-of-type(1) ul:nth-of-type(1) {
-  outline: none;
-}
 
 input[id=color_1_red]:checked ~ ul li li {--vuurvonkjesKleur1: var(--red);} /* Verander de kleur variabele als er op een label geklikt wordt */
 input[id=color_1_orange]:checked ~ ul li li {--vuurvonkjesKleur1: var(--orange);}
